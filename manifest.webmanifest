@@ -1,0 +1,28 @@
+{
+  "name": "Maha's Little Elsewhere",
+  "short_name": "Little Elsewhere",
+  "description": "A tiny world of pleasant detours.",
+  "display": "standalone",
+  "start_url": "./",
+  "scope": "./",
+  "background_color": "#f8f1e4",
+  "theme_color": "#f8f1e4",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

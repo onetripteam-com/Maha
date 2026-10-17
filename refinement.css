@@ -1,0 +1,167 @@
+/* LITTLE ELSEWHERE / DIRECTOR'S CUT
+   Material-first motion: weight, anticipation, paper, petals and cinematic camera.
+   Added as a separate refinement layer so the original site stays maintainable. */
+:root {--ease-weight:cubic-bezier(.22,1,.36,1);--ease-settle:cubic-bezier(.18,.86,.24,1.16);--deep-shadow:0 19px 45px rgba(44,64,52,.14)}
+body {background:#f9f2e6}
+.scene {animation:arrival .52s var(--ease-weight) both}
+@keyframes arrival {from{opacity:.4;transform:translate3d(0,11px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+/* A world that leads, instead of an introduction that gets in the way. */
+.home-layout {min-height:0;gap:clamp(24px,3vw,54px)}
+.home-copy{padding-block:48px 54px}
+.home-copy h1{font-size:clamp(53px,5.4vw,88px);letter-spacing:-.06em;margin-bottom:17px}
+.home-copy h1 i{display:inline}
+.home-copy .lead{font-size:clamp(23px,2.4vw,33px);margin-bottom:10px}
+.home-copy>p:not(.eyebrow):not(.lead){line-height:1.6;max-width:390px}
+.home-cta{margin-top:23px}
+.map-stage{position:relative;perspective:1100px}
+.map-frame{--tiltX:0deg;--tiltY:0deg;transform:rotate(-.6deg) rotateX(var(--tiltX)) rotateY(var(--tiltY));transform-style:preserve-3d;transition:transform .8s var(--ease-weight),box-shadow .7s;box-shadow:0 22px 50px rgba(65,99,74,.22),0 4px 1px #dbcdb4;border:7px solid #fffaeb}
+.map-depth-back{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 75% 22%,#fff8d140,transparent 38%);mix-blend-mode:screen}
+.map-stage:hover .map-frame{box-shadow:0 28px 65px rgba(65,99,74,.24),0 4px 1px #dbcdb4}
+.town-hotspot{z-index:3}
+.town-hotspot:before{transition:transform .4s var(--ease-settle),background .25s}
+.town-hotspot:active:before{transform:translateX(-50%) scale(.84);background:#976a6e}
+@media(hover:hover) and (pointer:fine){.town-hotspot:hover:before{transform:translateX(-50%) translateY(-4px) scale(1.2)}}
+.map-frame::after{content:'TAP THE LITTLE BUILDINGS';position:absolute;top:10px;left:12px;background:#fffaeee8;border:1px solid #ffffffbe;border-radius:99px;padding:4px 10px;z-index:4;font-size:9px;letter-spacing:.10em;font-weight:800;color:#3a6354;pointer-events:none}
+.home-bottom{max-width:1380px;margin:0 auto;padding-top:13px}
+.home-next-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px}
+.home-next-head .section-eyebrow{border:0;padding:0;margin:0 0 7px}
+.home-next-head h2{font-size:clamp(27px,3vw,41px);margin:0;letter-spacing:-.035em}
+.home-next-head h2 i{color:#bb817b}
+.district-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.district{min-height:157px;overflow:hidden;transform-origin:50% 100%;transition:transform .4s var(--ease-settle),box-shadow .35s;will-change:auto}
+.district:active{transform:translateY(2px) scale(.97)}
+@media(hover:hover) and (pointer:fine){.district:hover{transform:translateY(-7px) rotate(-1deg);box-shadow:var(--deep-shadow)}}
+/* Five dependable thumb destinations, the remaining doors in a proper sheet. */
+.dock{background:#fffbf2eb;box-shadow:0 -4px 18px #334b4219}
+.dock-inner{max-width:560px;justify-content:space-around;overflow:hidden;gap:0}
+.dock-item{flex:1 1 20%;min-width:0;max-width:none;min-height:52px}
+.dock-item:active{transform:translateY(2px)}
+.dock-item.active{color:#214f44;background:#dce9db}
+/* An explore panel that belongs to the world rather than an app drawer. */
+.explore-sheet{border:0;border-radius:28px 28px 0 0;background:#fcf5e9;width:min(100%,680px);max-width:100%;max-height:min(88svh,830px);padding:20px clamp(18px,4vw,38px) calc(30px + env(safe-area-inset-bottom));margin:auto auto 0;overflow-y:auto;box-shadow:0 -20px 85px #132c2865;color:var(--ink);animation:sheetIn .46s var(--ease-weight) both}
+.explore-sheet::backdrop{background:#142f2bbd;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+@keyframes sheetIn {from{opacity:.5;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
+.sheet-handle{width:51px;height:5px;background:#cec3ad;border-radius:5px;margin:0 auto 19px}
+.sheet-head{display:flex;justify-content:space-between;align-items:start;gap:15px}
+.sheet-head h2{font-size:clamp(33px,6vw,48px);margin:0 0 8px}
+.sheet-head h2 i{color:#bf827e}
+.sheet-head .eyebrow{margin-bottom:5px}
+.sheet-help{color:#64766c;font-size:13px;margin:5px 0 21px}
+.sheet-close{height:44px;width:44px;flex:none;border:1px solid #dfd7c2;border-radius:50%;background:#fffaf0;font-size:27px}
+.sheet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sheet-grid button{display:grid;grid-template-columns:35px 1fr;align-items:center;grid-template-rows:auto auto;text-align:left;gap:0 9px;min-width:0;min-height:76px;padding:12px 12px;border:1px solid #e4d8bf;border-radius:15px;background:#fffaf0;transition:transform .24s var(--ease-settle),background .24s;box-shadow:0 2px 0 #e7ddc7}
+.sheet-grid button:nth-child(3n+1){background:#e8f0e1}.sheet-grid button:nth-child(3n+2){background:#f2e5dd}.sheet-grid button:nth-child(3n){background:#ece7f1}
+.sheet-grid button span{grid-row:1/3;font-size:26px;color:#72967f;text-align:center}
+.sheet-grid button b{font:19px Georgia,serif;min-width:0}
+.sheet-grid button small{font-size:11px;color:#697f74}
+.sheet-grid button:active{transform:scale(.965)}
+/* A route out of every destination, never a dead end. */
+.scene-next{max-width:1100px;margin:70px auto 0;display:flex;align-items:center;gap:20px;position:relative;padding:26px 28px 26px 78px;border:1px solid #dfdac6;background:linear-gradient(105deg,#f0eee0,#faf1e5);border-radius:22px;box-shadow:0 5px 0 #e9dfc7}
+.scene-next-squiggle{position:absolute;left:23px;top:26px;font-size:40px;color:#be8d85}
+.scene-next div:nth-child(2){flex:1;min-width:0}
+.scene-next p{font-size:10px;color:#7f9485;letter-spacing:.14em;font-weight:850;margin:0 0 6px}
+.scene-next h3{font-size:clamp(23px,3vw,34px);margin:0}
+.scene-next-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+/* Material quality: edges, gentle shadow, and restrained depth */
+.flower-option{transition:transform .38s var(--ease-settle),box-shadow .3s,background .2s;position:relative;overflow:hidden}
+.flower-option:active{transform:scale(.96)}
+.flower-option svg{filter:drop-shadow(0 7px 5px #5b7c5b23)}
+.bouquet-stage svg{filter:drop-shadow(0 7px 9px #52664c20)}
+.bouquet-stage svg .petal-head{transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 3px 2px #5e725027)}
+.bouquet-stage svg .fresh-flower .petal-head{animation:flowerArrive 780ms cubic-bezier(.19,.85,.22,1.17) both}
+.bouquet-stage svg path.fresh-stem{stroke-dasharray:340;stroke-dashoffset:340;animation:stemGrow .62s ease-out both}
+.bouquet-stage svg .fresh-flower{transform-origin:50% 93%}
+@keyframes flowerArrive{0%{opacity:0;transform:scale(.14) rotate(-32deg)}53%{opacity:1;transform:scale(1.09) rotate(5deg)}80%{transform:scale(.965) rotate(-2deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes stemGrow{to{stroke-dashoffset:0}}
+.flower-petal{position:fixed;z-index:101;pointer-events:none;width:13px;height:17px;border-radius:75% 18% 72% 17%;background:#eaa6a5;box-shadow:inset 2px 2px 0 #ffffff70;animation:petalPhysics var(--time,920ms) cubic-bezier(.24,.31,.56,1) forwards}
+@keyframes petalPhysics{0%{opacity:0;transform:translate3d(0,0,0) rotate(0) scale(.6)}13%{opacity:1}70%{opacity:1}100%{opacity:0;transform:translate3d(var(--dx,30px),var(--dy,100px),0) rotate(var(--rot,220deg)) scale(.7)}}
+.postcard{transform-origin:50% 50%;transition:transform .3s var(--ease-settle)}
+.postcard:active{transform:scale(.985)}
+.postcard-inner{transition:transform .92s cubic-bezier(.2,.76,.22,1);box-shadow:0 18px 30px #4c5f4c28,0 3px 1px #d8c7b3}
+.postcard .pc-front,.postcard .pc-back{box-shadow:inset 0 0 0 1px #d7b79d88}
+.postcard .pc-front:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,#fffdf327,transparent 55%,#6b554a0e)}
+.letter-paper{background:repeating-linear-gradient(0deg,#fffaed 0,#fffaed 32px,#f0e4d4 33px);box-shadow:5px 9px 0 #e4d5ba,13px 18px 37px #16282352;transform-origin:50% 3%;animation:realPaper .66s var(--ease-weight) both}
+@keyframes realPaper{0%{opacity:0;transform:perspective(800px) translateY(40px) rotateX(-18deg) scale(.92)}55%{opacity:1;transform:perspective(800px) translateY(-4px) rotateX(3deg) scale(1.014)}100%{transform:perspective(800px) translateY(0) rotateX(0) scale(1)}}
+.letter-dialog::backdrop{background:#1d302fc3}
+.envelope-btn{transition:transform .4s var(--ease-settle),box-shadow .4s}
+.envelope-btn:active{transform:translateY(3px) rotate(-1deg) scale(.98)}
+/* Cinema: a projector, focal plane and individual camera moves, not five static slides. */
+.cinema-room{position:relative;background:radial-gradient(ellipse at 50% 0,#73606a,#392d3d 80%);box-shadow:0 30px 70px #1f2e2c53,inset 0 2px 0 #b49a7e}
+.movie-shell{box-shadow:inset 0 0 0 7px #352835,0 0 38px #f5d29813}
+.movie-shell:after{content:'';position:absolute;top:0;left:50%;width:75%;height:10px;transform:translateX(-50%);background:#ffeabc76;filter:blur(15px);pointer-events:none;z-index:5}
+.film-art{inset:-2%;will-change:transform;backface-visibility:hidden}
+.movie-shell.is-open .film-art.scene-switch{animation:cameraTake var(--take-duration,7.2s) cubic-bezier(.2,.06,.53,1) both}
+.film-art[data-shot="0"]{--camera-from:scale(1.10) translate3d(-3%,1%,0);--camera-to:scale(1.2) translate3d(1%,-2%,0)}
+.film-art[data-shot="1"]{--camera-from:scale(1.2) translate3d(2%,0,0);--camera-to:scale(1.12) translate3d(-2%,0,0)}
+.film-art[data-shot="2"]{--camera-from:scale(1.1) translate3d(-1%,2%,0);--camera-to:scale(1.18) translate3d(1%,-1%,0)}
+.film-art[data-shot="3"]{--camera-from:scale(1.17) translate3d(2%,2%,0);--camera-to:scale(1.08) translate3d(-1%,-1%,0)}
+.film-art[data-shot="4"]{--camera-from:scale(1.10) translate3d(0,0,0);--camera-to:scale(1.21) translate3d(0,-2%,0)}
+@keyframes cameraTake{0%{opacity:.38;transform:var(--camera-from)}7%{opacity:1}100%{opacity:1;transform:var(--camera-to)}}
+.film-art .film-clouds{animation:cloudDrift 8s linear both;will-change:transform}
+@keyframes cloudDrift{from{transform:translateX(-30px)}to{transform:translateX(40px)}}
+.film-art .film-traveller{transform-origin:50% 100%;animation:travellerLive 1.35s ease-in-out infinite alternate}
+@keyframes travellerLive{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-3px) rotate(1deg)}}
+.film-art .film-night-stars{animation:nightSky 4s ease-in-out infinite alternate}
+@keyframes nightSky{to{opacity:.55}}
+.film-grain{opacity:.4}
+.movie-curtain{background:repeating-linear-gradient(90deg,#562738 0%,#a14859 8%,#723348 17%,#a54a5f 23%,#572339 30%);transition:transform 1.35s cubic-bezier(.61,0,.24,1);filter:drop-shadow(5px 0 7px #0c0911a1)}
+.movie-shell.is-open .curtain-left{transform:translateX(-107%) skewY(-2deg)}
+.movie-shell.is-open .curtain-right{transform:translateX(107%) skewY(2deg)}
+.cinema-room .film-progress span{transition:width .5s var(--ease-weight)}
+.studio-preview .postcard-svg-scene svg{animation:studioFilmTake 3s cubic-bezier(.18,.34,.56,1) both}
+@keyframes studioFilmTake{from{transform:scale(1.13) translate3d(-3%,1%,0)}to{transform:scale(1.24) translate3d(2%,-2%,0)}}
+/* The folded invitation really hinges before it lifts. */
+.entry-envelope{transform-style:preserve-3d;filter:drop-shadow(0 15px 10px #897e6855)}
+.entrance.opening .entry-flap{transform:rotateX(174deg)}
+.entrance.opening .entry-letter{transform:translateY(-83px) rotate(-1deg);transition-delay:.13s}
+.entrance.leaving .entry-card{transform:translateY(-12px) scale(1.09);opacity:0;transition:transform .48s var(--ease-weight),opacity .42s}
+/* Browser-native connected-scene transitions, with instant functional fallback. */
+::view-transition-old(root){animation:worldOut .30s cubic-bezier(.33,0,.67,1) both}
+::view-transition-new(root){animation:worldIn .48s var(--ease-weight) both}
+@keyframes worldOut{to{opacity:.55;transform:scale(1.035)}}
+@keyframes worldIn{from{opacity:.15;transform:scale(.978)}to{opacity:1;transform:scale(1)}}
+/* Mobile: see and use the world without scrolling past a long introduction. */
+@media(max-width:850px){.home-layout{gap:9px}.home-copy{padding:31px 6px 8px;max-width:670px}.home-copy h1{font-size:clamp(44px,8vw,65px)}.map-stage{padding-top:6px}.district-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-bottom{margin-top:15px}}
+@media(max-width:580px){
+ .scene-home{padding:0 14px 35px}
+ .home-copy{padding:20px 2px 10px}
+ .home-copy .eyebrow{margin-bottom:8px;font-size:8px;letter-spacing:.12em}
+ .home-copy h1{font-size:clamp(42px,11vw,53px);line-height:1;margin-bottom:7px}
+ .home-copy h1 i{display:inline}
+ .home-copy .lead{font-size:21px;margin-bottom:7px}
+ .home-copy>p:not(.eyebrow):not(.lead){font-size:12px;line-height:1.45;max-width:330px}
+ .home-cta{margin-top:12px}
+ .home-cta .primary-btn{min-height:40px;font-size:12px;padding:8px 20px;box-shadow:0 3px 0 #173a33}
+ .map-stage{padding:0;margin:12px auto 0}
+ .map-frame{border-width:5px;transform:rotate(-.35deg);border-radius:15px}
+ .map-frame::after{font-size:7px;left:6px;top:5px;padding:2px 7px}
+ .town-hotspot{display:flex;min-width:42px;min-height:34px;align-items:flex-end}
+ .town-hotspot:before{height:19px;width:19px;font-size:10px;top:-3px}
+ .town-hotspot span{font-size:8px;padding:4px 5px;box-shadow:0 2px 3px #234b402d}
+ .hotspot-garden{left:18%;top:67%}.hotspot-mail{left:68%;top:70%}.hotspot-cinema{left:45%;top:66%}.hotspot-travel{left:87%;top:71%}.hotspot-arcade{left:29%;top:84%}
+ .map-caption{font-size:10px;margin-top:7px}
+ .home-bottom{margin:18px auto 0}
+ .home-next-head{align-items:center;margin-bottom:12px}
+ .home-next-head h2{font-size:26px}
+ .home-next-head .outline-btn{min-height:38px;font-size:11px;padding:7px 10px}
+ .district-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .district{min-height:137px}
+ .dock{padding:7px 5px calc(5px + env(safe-area-inset-bottom))}
+ .dock-inner{justify-content:space-between;padding:0}
+ .dock-item{flex:1 1 20%;min-width:0;min-height:51px}
+ .scene-next{margin-top:43px;flex-wrap:wrap;gap:11px;padding:19px}
+ .scene-next-squiggle{display:none}
+ .scene-next h3{font-size:25px}
+ .scene-next-actions{width:100%}
+ .scene-next-actions>*{flex:1 1 130px;font-size:12px;min-width:0;padding-inline:9px}
+ .sheet-grid button{min-height:74px}
+ .sheet-grid button b{font-size:16px}
+ .sheet-grid button small{font-size:10px}
+}
+@media(max-width:360px){.home-copy h1{font-size:39px}.home-copy>p:not(.eyebrow):not(.lead){font-size:11px}.home-next-head h2{font-size:23px}.sheet-grid{gap:7px}.sheet-grid button{padding:9px}}
+@media(prefers-reduced-motion:reduce){.scene,.film-art,.film-art .film-clouds,.film-art .film-traveller,.film-art .film-night-stars,.studio-preview .postcard-svg-scene svg,.bouquet-stage svg .fresh-flower .petal-head{animation:none!important}.explore-sheet{animation:none}.map-frame{transform:none!important}::view-transition-old(root),::view-transition-new(root){animation-duration:.01ms!important}}
+
+.movie-shell.is-paused .film-art,.movie-shell.is-paused .film-art *{animation-play-state:paused!important}
+/* Focus the destination heading for screen readers without drawing a confusing input outline. */
+.scene h1[tabindex="-1"]:focus,.scene h2[tabindex="-1"]:focus{outline:none}
+@media(max-width:580px){.town-hotspot{min-height:44px;min-width:44px}}
