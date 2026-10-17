@@ -1,0 +1,41 @@
+name: Import Maha's Little Elsewhere V2
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Mahas_Little_Elsewhere_Directors_Cut_v2.zip'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Unpack the supplied website release
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f Mahas_Little_Elsewhere_Directors_Cut_v2.zip
+          mkdir -p .maha-import
+          unzip -q -o Mahas_Little_Elsewhere_Directors_Cut_v2.zip -d .maha-import
+          test -f .maha-import/mahas-little-elsewhere/index.html
+          test -f .maha-import/mahas-little-elsewhere/js/app.js
+          test -f .maha-import/mahas-little-elsewhere/assets/little-town.svg
+          cp -a .maha-import/mahas-little-elsewhere/. ./
+          rm -rf .maha-import
+      - name: Commit site files to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Site files are already up to date.'
+          else
+            git commit -m 'Install Maha Little Elsewhere V2 website [skip ci]'
+            git push origin HEAD:main
+          fi
