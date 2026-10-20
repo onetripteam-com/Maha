@@ -1,0 +1,9 @@
+[
+  {"id":"daisy","name":"Daisy","color":"#f8f6e8","inner":"#e9ac46","meaning":"For surviving people. An underrated talent.","petals":11},
+  {"id":"sunflower","name":"Sunflower","color":"#e7a940","inner":"#775036","meaning":"For your completely unnecessary main-character energy.","petals":15},
+  {"id":"hibiscus","name":"Hibiscus","color":"#d87878","inner":"#ecbb74","meaning":"For making ordinary things unnecessarily interesting.","petals":5},
+  {"id":"jasmine","name":"Jasmine","color":"#f3e8d2","inner":"#e5c66f","meaning":"For the little things you probably don't notice about yourself.","petals":7},
+  {"id":"marigold","name":"Marigold","color":"#d99735","inner":"#f0c76a","meaning":"For all your questionable but entertaining decisions.","petals":18},
+  {"id":"tulip","name":"Tulip","color":"#dc9182","inner":"#bd6b61","meaning":"Because one flower had to behave properly.","petals":6},
+  {"id":"rose","name":"Rose","color":"#dc9f98","inner":"#ad6a6c","meaning":"For being Maha. Unfortunately, there's only one.","petals":13}
+]
