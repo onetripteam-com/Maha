@@ -1,0 +1,62 @@
+[
+  {
+    "id": "vlog",
+    "name": "Vlog Platform",
+    "number": "01",
+    "place": "KERALA BACKWATERS",
+    "subtitle": "Camera ready. Confidence optional.",
+    "description": "A tiny film school, where your first vlog is allowed to be gloriously imperfect.",
+    "hint": "OPENING IN PHASE 4",
+    "symbol": "◫"
+  },
+  {
+    "id": "arcade",
+    "name": "Arcade Carriage",
+    "number": "02",
+    "place": "BANGALORE AFTER RAIN",
+    "subtitle": "Terrible prizes. Excellent nonsense.",
+    "description": "Three games are being fitted into the carriage. The management has already misplaced the high scores.",
+    "hint": "GAMES ARRIVE IN PHASE 4",
+    "symbol": "♠"
+  },
+  {
+    "id": "post",
+    "name": "Post Office",
+    "number": "03",
+    "place": "KUWAIT GOLDEN HOUR",
+    "subtitle": "Some things travel better on paper.",
+    "description": "A wooden counter, postcards, a stamp passport and a letter box waiting for the right words.",
+    "hint": "LETTERS ARRIVE IN PHASE 3",
+    "symbol": "✉"
+  },
+  {
+    "id": "chai",
+    "name": "Chai Stall",
+    "number": "04",
+    "place": "MOUNTAIN MIST",
+    "subtitle": "Any kind of day is welcome.",
+    "description": "A quiet counter for great days, ordinary days, difficult days, and the ones that need extra chai.",
+    "hint": "MOOD NOTES ARRIVE IN PHASE 3",
+    "symbol": "☕"
+  },
+  {
+    "id": "quiet",
+    "name": "Quiet Carriage",
+    "number": "05",
+    "place": "RAIN ON GLASS",
+    "subtitle": "No timetable. No expectations.",
+    "description": "Just a window, gentle rain and the permission to do absolutely nothing for a while.",
+    "hint": "REST ROOM ARRIVES IN PHASE 3",
+    "symbol": "☂"
+  },
+  {
+    "id": "last",
+    "name": "Last Station",
+    "number": "06",
+    "place": "SOMEWHERE NICE",
+    "subtitle": "The destination was never the point.",
+    "description": "This place doesn't expire. Come back tomorrow, or in six months. The chai stall will still be here.",
+    "hint": "WELCOME BACK, ANYTIME",
+    "symbol": "✳"
+  }
+]
