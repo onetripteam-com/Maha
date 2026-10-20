@@ -18,7 +18,7 @@ function gotoStation(id){
  $("#stationName").textContent=s.name;$("#stationSubtitle").textContent=s.subtitle;
  $("#stationDescription").textContent=s.description;$("#stationHint").textContent=s.hint;
  $("#stationSymbol").textContent=s.symbol;
- $("#stationLast").hidden=s.id!=="last";$("#stationFuture").hidden=s.id==="last";
+ $("#stationLast").hidden=s.id!=="last";$("#stationFuture").hidden=s.id==="last";$("#stationFinish").hidden=s.id!=="last";
  panel.dataset.station=id;
  store.set("lastStation",id);navi("station");
 }
