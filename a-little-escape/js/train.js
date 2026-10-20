@@ -56,6 +56,8 @@ async function start(){
  $("#hubJourney").addEventListener("click",openTrain);
  $("#hubFlowers").addEventListener("click",()=>navi("flowers"));
  $("#trainHome").addEventListener("click",hub);
+ $("#skipHub").addEventListener("click",hub);
+ $("#skipRide").addEventListener("click",()=>$("#trainStops").scrollIntoView({behavior:reduced()?"instant":"smooth",block:"start"}));
  $("#stationBack").addEventListener("click",()=>{navi("train");requestAnimationFrame(landscape)});
  $("#stationHub").addEventListener("click",hub);
  $("#stationFinish").addEventListener("click",hub);
