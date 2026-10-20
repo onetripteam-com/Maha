@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#f4eddf">
+<meta name="description" content="A little escape, made for Maha.">
+<title>MAHA — A Little Escape</title>
+<link rel="stylesheet" href="./css/site.css">
+</head>
+<body>
+<a class="skip" href="#experience">Skip to the experience</a>
+<header class="top">
+  <a href="./" class="wordmark" aria-label="Maha — A Little Escape, start">MAHA<span class="mark">✳</span><small>A LITTLE ESCAPE</small></a>
+  <span class="edition">A PLACE MADE FOR ONE PERSON <span aria-hidden="true">↗</span></span>
+  <button id="motionToggle" class="utility" type="button" aria-pressed="false">Reduce motion</button>
+</header>
+<main id="experience">
+  <section id="hug" class="scene hug" aria-labelledby="hugTitle">
+    <div class="hug-paper" aria-hidden="true"><span class="corner-label">A SMALL DELIVERY / NO. 001</span></div>
+    <div class="hug-content">
+      <p class="eyebrow eyebrow-light">FOR HABIBII · FROM FAR AWAY</p>
+      <div class="intro-lines" id="introLines" aria-live="polite">
+        <p class="line" style="--delay:.1s">It's been almost 3 years.</p>
+        <p class="line" style="--delay:1.2s">I can't hug you from here.</p>
+        <h1 id="hugTitle" class="line" style="--delay:2.3s">So… <em>virtual hug?</em></h1>
+      </div>
+      <div class="hug-actions" id="hugActions">
+        <button class="button button-coral" id="yesHug" type="button">Yes, fine <span aria-hidden="true">↗</span></button>
+        <button class="button button-ghost" id="noHug" type="button">Absolutely not</button>
+      </div>
+      <div class="hug-result" id="hugResult" hidden>
+        <div id="embrace" class="embrace" aria-hidden="true"><span class="arm arm-left"></span><span class="embrace-center">♡</span><span class="arm arm-right"></span></div>
+        <p class="reaction" id="reaction" aria-live="polite"></p>
+        <span class="receipt" id="hugReceipt" hidden>HUG RECEIPT · PAID IN FULL</span>
+        <button class="button button-coral" id="toFlowers" type="button">There's something else for you <span aria-hidden="true">→</span></button>
+        <button class="text-link" id="tryAgain" type="button">Actually, ask me again</button>
+      </div>
+    </div>
+    <div class="hug-foot"><span>EST. JUST BECAUSE</span><span>SCROLLING NOT REQUIRED HERE</span></div>
+  </section>
+
+  <section id="flowers" class="scene flowers" aria-labelledby="flowersTitle" hidden>
+    <div class="sunwash" aria-hidden="true"></div>
+    <div class="scene-meta"><span>THE FLOWER COUNTER</span><span>02 / THE LITTLE BEGINNINGS</span></div>
+    <div class="flower-heading">
+      <p class="eyebrow">SEVEN SMALL THINGS, JUST FOR YOU</p>
+      <h2 id="flowersTitle">Flowers without <em>an occasion.</em></h2>
+      <p>Apparently somebody ordered seven flowers. There's no card explaining why. Suspicious.</p>
+    </div>
+    <div class="counter">
+      <div class="flower-stage">
+        <div class="stage-light" aria-hidden="true"></div>
+        <div class="flower-paper-label">MAHA'S FLOWERS <span>✿</span> FRESHLY IMAGINED</div>
+        <svg id="bouquetSvg" class="bouquet-svg" viewBox="0 0 520 530" role="img" aria-labelledby="bouquetTitle bouquetDesc">
+          <title id="bouquetTitle">A growing bouquet for Maha</title>
+          <desc id="bouquetDesc">As each of seven flowers is collected, a colourful hand-drawn flower joins the bouquet.</desc>
+          <g id="bouquetArtwork"></g>
+        </svg>
+        <div id="petals" class="petals" aria-hidden="true"></div>
+        <span class="stage-signature">FOR DR. MAHA · WITH QUESTIONABLE FLORIST SKILLS</span>
+      </div>
+      <aside class="flower-side">
+        <div class="counter-top"><span>THE FLORIST'S LEDGER</span><span id="flowerCount">0 / 7</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Flowers collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="progress"><span id="progressFill"></span></div>
+        <p class="side-number" id="flowerNumber">01 <small>/ 07</small></p>
+        <p class="side-category" id="flowerCategory">NEXT UP</p>
+        <h3 id="flowerName">Daisy</h3>
+        <p class="flower-meaning" id="flowerMeaning">For surviving people. An underrated talent.</p>
+        <div class="flower-controls">
+          <button id="giveFlower" class="button button-green" type="button">Hand me this flower <span aria-hidden="true">↗</span></button>
+          <button id="downloadBouquet" class="button button-outline" type="button" hidden>Save bouquet as PNG ↓</button>
+          <button id="replayFlowers" class="text-link dark-link" type="button" hidden>Make the bouquet again</button>
+        </div>
+        <p class="smallprint" id="flowerHint" aria-live="polite">No floristry qualifications required.</p>
+        <span class="florist-stamp" aria-hidden="true">✳<br>WITH<br>LOVE &<br>NONSENSE</span>
+      </aside>
+    </div>
+    <div class="footer-bar"><span>NO EXPIRY DATE ON ANY OF THIS.</span><button id="returnHug" type="button">↖ BACK TO THE BEGINNING</button></div>
+  </section>
+
+  <section id="platform" class="scene platform" aria-labelledby="platformTitle" hidden>
+    <div class="ticket"><span>MAHA EXPRESS · PREVIEW TICKET</span><strong>ONE WAY TO SOMEWHERE NICE</strong><small>PASSENGER: DR. MAHA &nbsp; / &nbsp; RETURN: WHENEVER</small></div>
+    <p class="eyebrow">YOU'VE GOT YOUR FLOWERS</p>
+    <h2 id="platformTitle">And this is only <em>the beginning.</em></h2>
+    <p>The train, tiny games, letters and a few very unnecessary surprises are being built in the next chapters.</p>
+    <button id="visitBouquet" class="button button-coral" type="button">Visit your flowers again ↗</button>
+  </section>
+</main>
+<footer class="site-footer">MAHA — A LITTLE ESCAPE <span>BUILT TO BE HERE ON ORDINARY DAYS, TOO.</span></footer>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
