@@ -1,6 +1,6 @@
 # MAHA — A Little Escape 🌸
 
-**Phase 2 — The Maha Express** is committed in `a-little-escape/`. This is a separate project from the existing site in the repository root; no root files are overwritten.
+**Phase 4 — The Playful Layer** is committed in `a-little-escape/`. This is a separate project from the existing site in the repository root; no root files are overwritten.
 
 ## Working features
 
@@ -60,3 +60,19 @@ No JavaScript framework or build step. Scroll updates are throttled to one per a
 ## Creative note
 
 The project's visual identity is warm, editorial, earthy and analog, not a space or glow theme. Personal writing is intentionally provisional until real shared jokes and memories are supplied. The website does not include trackers or analytics.
+
+
+## Phase 4 — Playful layer
+
+Implemented in `js/play.js`, `css/play.css` and additional HTML scenes:
+
+- **Vlog Platform**: a five-shot challenge checklist saved per device, eight-by-eight playful channel-name generator, a downloadable PNG title card rendered locally with Canvas, and an editable travel wish list saved locally.
+- **Chai Maker**: actual hold/release timing mechanic on pointer and keyboard; a successful pour is within ten percentage points of a 76% target.
+- **Pack the Suitcase**: a real 4×4 occupancy grid, placement checks for collisions/edges, rotation and reset; all four items must be fitted.
+- **Guess the Malayalam Word**: 5-letter Manglish puzzles with five tries, two-pass green/orange tile scoring and a small manually written word bank. Manglish spellings vary; expand and review the bank with Maha or another fluent speaker.
+- **Stamps**: each game unlocks its own stamp locally; basic compatibility with the existing Post Office stamp data.
+- **Tiny Clips**: five lazy, user-initiated video slots. No clips have been uploaded yet. See `content/clip-manifest.json` for exact expected assets. Supply 720p H.264 MP4 files under 3 MB each and caption files; artwork-only placeholders appear before files exist.
+
+Everything is client-side, with no content uploads, login or analytics. Browser storage is device-local and can be cleared. The clip shelf is an asset placeholder, not completed video production.
+
+**Quality status:** the JavaScript modules have passed syntax parsing. Full browser interaction tests, mobile 60fps benchmarking, device-specific accessibility verification and offline support are outstanding; they belong to Phase 5. Do not interpret a commit as a finished production QA pass.
