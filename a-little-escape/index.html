@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/site.css">
 <link rel="stylesheet" href="./css/train.css">
 <link rel="stylesheet" href="./css/personal.css">
+<link rel="stylesheet" href="./css/play.css">
 </head>
 <body>
 <a class="skip" href="#experience">Skip to the experience</a>
@@ -183,10 +184,32 @@
  <div class="quiet-shelf"><div><span class="tiny-label">THE COMFORT SHELF</span><h3>Something familiar?</h3><p>A favourite old comedy, a slow travel video, something you've seen a hundred times — whatever feels good. Add her favourites to the content later.</p></div><div><span class="tiny-label">VOICE NOTES</span><h3>Five little slots.</h3><p>Voice recordings haven't been supplied yet. No audio will play unexpectedly.</p><div class="voice-slots"><span>01 ◌</span><span>02 ◌</span><span>03 ◌</span><span>04 ◌</span><span>05 ◌</span></div></div></div>
  <article id="quietSpecial" class="surgery-note" hidden><span class="tiny-label">A QUIET NOTE, FOR THIS TIME ONLY</span><h3 id="specialTitle"></h3><p id="specialBody"></p></article>
 </section>
+
+<section id="vlogRoom" class="scene play-scene vlog-room" hidden aria-labelledby="vlogTitle">
+ <div class="personal-head"><span>STOP 01 / DR. MAHA PRODUCTIONS</span><button type="button" data-play-hub>← STATION LOBBY</button></div>
+ <div class="play-hero"><p class="eyebrow">EPISODE 01 · BUDGET QUESTIONABLE · POTENTIAL EXCELLENT</p><h2 id="vlogTitle" tabindex="-1">Your tiny <em>film studio.</em></h2><p>For that travel vlog you might make one day. No deadlines. No need to publish. Just a little excuse to look around.</p></div>
+ <div class="play-grid">
+ <article class="play-card"><span class="tiny-label">01 / THE 60-SECOND RECIPE</span><h3>Five little shots.</h3><p>Collect these shots on your phone, whenever you feel like it. Each can be around 5–12 seconds.</p><div id="vlogChecklist" class="vlog-checklist"></div><button type="button" class="button button-green" id="vlogChallenge">Check my tiny plan ↗</button><p id="vlogResult" role="status">You can keep the entire video to yourself.</p></article>
+ <article class="play-card"><span class="tiny-label">02 / WHAT WOULD YOU CALL IT?</span><h3>Channel-name machine.</h3><div class="vlog-result" id="nameResult" aria-live="polite">DR. MAHA PRODUCTIONS</div><button type="button" class="button button-outline" id="nameGenerate">Another questionable idea ↻</button><p>These are playful brainstorms, not checked channel-name availability.</p></article>
+ <article class="play-card"><span class="tiny-label">03 / TAKE HOME THE TITLE CARD</span><h3>A title card, yours to keep.</h3><label for="titleInput">Your episode title</label><input id="titleInput" maxlength="48" placeholder="The first little detour"><button type="button" class="button button-green" id="titleDownload">Download PNG ↗</button><p>Drawn on your device; nothing gets uploaded.</p></article>
+ <article class="play-card"><span class="tiny-label">04 / THE PLACES DRAWER</span><h3>Where to next?</h3><ul id="bucketList" class="bucket-list"></ul><label for="bucketInput">Add a place</label><div class="inline-controls"><input id="bucketInput" maxlength="70" placeholder="Somewhere with good chai"><button type="button" class="button button-green" id="bucketAdd">Add ↗</button></div><p>Stored in this browser only.</p></article>
+ </div>
+</section>
+<section id="arcadeRoom" class="scene play-scene arcade-room" hidden aria-labelledby="arcadeTitle">
+ <div class="personal-head"><span>STOP 02 / THE ARCADE CARRIAGE</span><button type="button" data-play-hub>← STATION LOBBY</button></div>
+ <div class="play-hero"><p class="eyebrow">THREE GAMES · ABSOLUTELY NO SERIOUS CONSEQUENCES</p><h2 id="arcadeTitle" tabindex="-1">A bit of <em>nonsense.</em></h2><p>Win a tiny stamp. Lose with dignity. Or without dignity, that works too.</p><p id="arcadeWins" class="arcade-win">STAMPS: 0 / 3</p></div>
+ <div class="play-grid">
+ <article class="play-card game-card"><span class="tiny-label">GAME 01 / POUR WITH PRECISION</span><h3>Chai Maker.</h3><p>Hold the button or Space/Enter to pour, release near 76%. Don't flood the station.</p><div class="chai-meter" aria-label="Cup fill level"><div class="chai-liquid" id="chaiFill"></div><span id="chaiValue">0%</span></div><button type="button" class="button button-green" id="pourButton">Hold to pour ☕</button><p id="chaiVerdict" role="status">Waiting for an extremely qualified chai maker.</p></article>
+ <article class="play-card game-card"><span class="tiny-label">GAME 02 / REAL GRID FITTING</span><h3>Pack the suitcase.</h3><p>Select an item. Put its top-left corner on an empty square. All four items must fit in the 4×4 case.</p><div id="caseItems" class="case-items" aria-label="Items to pack"></div><div class="case-grid" id="caseGrid" aria-label="Four by four suitcase grid"></div><div class="inline-controls"><button type="button" class="button button-outline" id="caseRotate">Rotate ↻</button><button type="button" class="button button-outline" id="caseReset">Empty case</button></div><p id="caseStatus" role="status">Pack the essentials.</p></article>
+ <article class="play-card game-card"><span class="tiny-label">GAME 03 / THE MANGLISH COUNTER</span><h3>Guess the word.</h3><p id="wordMeaning">Meaning: Rain · Five letters</p><div id="wordRows" class="word-rows" aria-label="Previous guesses"></div><label for="wordAnswer">Your five-letter Manglish guess</label><input id="wordAnswer" maxlength="5" pattern="[A-Za-z]{5}" autocomplete="off" autocapitalize="off" spellcheck="false"><div class="inline-controls"><button id="wordSubmit" type="button" class="button button-green">Guess ↗</button><button id="newWord" type="button" class="button button-outline">New word ↻</button></div><p id="wordStatus" role="status">You have five attempts.</p></article>
+ </div>
+ <div class="clips-panel"><p class="eyebrow">A LITTLE SHELF FOR LATER</p><h3>Tiny clips.</h3><p>These are intentional video slots, ready for your short clips. Nothing plays automatically.</p><div id="clipShelf" class="clip-shelf"></div></div>
+</section>
 </main>
 <footer class="site-footer">MAHA — A LITTLE ESCAPE <span>BUILT TO BE HERE ON ORDINARY DAYS, TOO.</span></footer>
 <script type="module" src="./js/app.js"></script>
 <script type="module" src="./js/train.js"></script>
 <script type="module" src="./js/personal.js"></script>
+<script type="module" src="./js/play.js"></script>
 </body>
 </html>
