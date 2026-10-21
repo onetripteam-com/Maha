@@ -9,6 +9,7 @@
 <title>MAHA — A Little Escape</title>
 <link rel="stylesheet" href="./css/site.css">
 <link rel="stylesheet" href="./css/train.css">
+<link rel="stylesheet" href="./css/personal.css">
 </head>
 <body>
 <a class="skip" href="#experience">Skip to the experience</a>
@@ -143,12 +144,49 @@
    <div id="hubDoors" class="hub-door-grid" aria-label="Open a station"></div>
   </div>
   <div class="hub-extras"><button id="hubFlowers" type="button" class="button button-outline">Your seven flowers ✿</button><button id="boardHub" class="button button-outline" type="button">Refresh today's board ↻</button></div>
-  <p class="smallprint">STAMP PASSPORT · POSTCARD RACK · MOOD COUNTER — THESE ARRIVE IN PHASE 3.</p>
+  <div id="hubExtrasPhase3" class="hub-extras"><button type="button" class="button button-green" data-special-room="chaiRoom">How’s today? ☕</button><button type="button" class="button button-outline" data-special-room="postRoom">Postcards & stamps ✉</button><button type="button" class="button button-outline" data-special-room="quietRoom">Quiet carriage ☂</button></div>
  </div>
+</section>
+
+<section id="chaiRoom" class="scene personal-scene chai-room" hidden aria-labelledby="notesTitle">
+ <div class="personal-head"><span>STOP 04 / THE CHAI STALL</span><button type="button" data-room-hub>← STATION LOBBY</button></div>
+ <div class="room-layout">
+ <div class="room-intro"><p class="eyebrow">ONE CUP, ABSOLUTELY NO PRESSURE</p><h2>How's <em>today?</em></h2><p>Doesn't need to be a special day. Pick whatever is closest.</p>
+ <div class="mood-buttons" id="moods" role="group" aria-label="Choose how today feels">
+  <button data-mood="great" aria-pressed="false">Great</button><button data-mood="okay" aria-pressed="false">Okay</button><button data-mood="tired" aria-pressed="false">Tired</button><button data-mood="heavy" aria-pressed="false">Heavy</button><button data-mood="missing_home" aria-pressed="false">Missing home</button>
+ </div></div>
+ <div class="note-paper"><span class="tiny-label">LITTLE NOTES / NO COMPULSORY MOTIVATION</span><div class="cup-illustration" aria-hidden="true"><span class="steam steam-a">〰</span><span class="steam steam-b">〰</span><span class="cup-shape">☕</span></div><small id="noteTime"></small><h3 id="notesTitle" tabindex="-1">Okay</h3><blockquote id="noteText" aria-live="polite"></blockquote><div class="note-foot"><span id="moodSeen"></span><button id="anotherNote" type="button" class="button button-green">Another small note ↗</button></div></div>
+ </div>
+</section>
+
+<section id="postRoom" class="scene personal-scene post-room" hidden aria-labelledby="postTitle">
+ <div class="personal-head"><span>STOP 03 / THE POST OFFICE</span><button type="button" data-room-hub>← STATION LOBBY</button></div>
+ <div class="room-intro wide"><p class="eyebrow">AIR MAIL, UNNECESSARY STAMPS & OTHER SMALL THINGS</p><h2 id="postTitle" tabindex="-1">The little <em>post office.</em></h2><p>Pick up a postcard, open an envelope, or write something for much later.</p></div>
+ <div class="collection-board" aria-live="polite"><span id="keptCount">0 postcards kept</span><span id="stampCount">0 stamps collected</span><p id="collectionList"></p></div>
+ <h3 class="shelf-title">01 — Postcards from elsewhere</h3><div id="postcardRack" class="postcard-rack"></div>
+ <div id="cardFace" class="card-full" hidden><span>POSTCARD / AIR MAIL</span><h3 id="cardPlace"></h3><p id="cardCaption"></p><div class="postcard-back" id="cardMessage"></div><button id="savePostcard" type="button" class="button button-green">Keep this postcard ♡</button></div>
+ <h3 class="shelf-title">02 — The letter shelf</h3><div id="lettersGrid" class="letter-rack"></div>
+ <article id="openLetter" class="letter-open" hidden><span id="letterStamp" class="tiny-label"></span><button type="button" id="letterClose" class="close-letter">CLOSE ×</button><h3 id="letterName"></h3><div id="letterBody"></div><p class="letter-signoff">— from someone who couldn't keep this short</p></article>
+ <div class="mail-writers">
+  <div class="writer-pane"><span class="tiny-label">THE POSTBOX</span><h3>Write to me.</h3><p>Write whatever. Nothing sends itself.</p><label for="letterToMe">Your message</label><textarea id="letterToMe" maxlength="3000" placeholder="Dear highly questionable postal service…"></textarea><button class="button button-green" type="button" id="sendToMe">Prepare to send ↗</button><p id="sendStatus" class="status" role="status">If no email address is configured, you can copy your note into any messaging app.</p></div>
+  <div class="writer-pane"><span class="tiny-label">PRIVATE NOTE / THIS DEVICE ONLY</span><h3>A note to future Maha.</h3><p>Saved in this browser, not on a server. Export a backup if it's important.</p><label for="futureText">Your future note</label><textarea id="futureText" maxlength="3000" placeholder="Dear future me…"></textarea><div class="writer-actions"><button type="button" id="saveFuture" class="button button-green">Save on this device</button><button type="button" id="exportFuture" class="button button-outline">Export .txt ↓</button></div><p id="futureStatus" class="status" role="status">Browser data can be cleared or lost.</p></div>
+ </div>
+</section>
+
+<section id="quietRoom" class="scene personal-scene quiet-room" hidden aria-labelledby="quietTitle">
+ <div class="personal-head"><span>STOP 05 / THE QUIET CARRIAGE</span><button type="button" data-room-hub>← STATION LOBBY</button></div>
+ <div class="room-intro wide"><p class="eyebrow">NO TIMETABLE / NO EXPECTATIONS</p><h2 id="quietTitle" tabindex="-1">The quiet <em>carriage.</em></h2><p>Some days are meant for looking out of the window. You don't have to do anything here.</p></div>
+ <div class="quiet-layout">
+  <div class="rest-card"><div id="restWindow" class="rest-window"><div class="window-hills"></div><div class="rain-glass"></div><span class="rest-window-label">RAIN ON GLASS / WINDOW SEAT 01</span></div><button type="button" id="rainToggle" class="button button-outline" aria-pressed="false">Watch rain on glass</button><p class="quiet-disclaimer">A painted window, not a real weather forecast.</p></div>
+  <div class="rest-card rest-interactions"><h3>A little room to rest.</h3><p>For sitting quietly, watching something familiar, or doing an exceptionally pointless mini challenge.</p><div id="breathCircle" aria-hidden="true"></div><button type="button" class="button button-outline" id="breathToggle" aria-pressed="false">Start breathing visual</button><p class="quiet-disclaimer">Optional visual only; not a medical exercise.</p><button type="button" class="button button-green" id="tinyBored">I'm bored. Give me nonsense ↗</button><p id="boredResult" aria-live="polite">The boredom department is standing by.</p></div>
+ </div>
+ <div class="quiet-shelf"><div><span class="tiny-label">THE COMFORT SHELF</span><h3>Something familiar?</h3><p>A favourite old comedy, a slow travel video, something you've seen a hundred times — whatever feels good. Add her favourites to the content later.</p></div><div><span class="tiny-label">VOICE NOTES</span><h3>Five little slots.</h3><p>Voice recordings haven't been supplied yet. No audio will play unexpectedly.</p><div class="voice-slots"><span>01 ◌</span><span>02 ◌</span><span>03 ◌</span><span>04 ◌</span><span>05 ◌</span></div></div></div>
+ <article id="quietSpecial" class="surgery-note" hidden><span class="tiny-label">A QUIET NOTE, FOR THIS TIME ONLY</span><h3 id="specialTitle"></h3><p id="specialBody"></p></article>
 </section>
 </main>
 <footer class="site-footer">MAHA — A LITTLE ESCAPE <span>BUILT TO BE HERE ON ORDINARY DAYS, TOO.</span></footer>
 <script type="module" src="./js/app.js"></script>
 <script type="module" src="./js/train.js"></script>
+<script type="module" src="./js/personal.js"></script>
 </body>
 </html>
