@@ -26,7 +26,7 @@ function openCard(id){const p=postcards.find(v=>v.id===id);if(!p)return;openedCa
 function renderSaved(){const saved=read("keptCards",[]),stamps=read("stamps",[]);$("#keptCount").textContent=saved.length+" postcards kept";$("#stampCount").textContent=stamps.length+" stamps collected";$("#collectionList").textContent=saved.length?"Saved postcards: "+saved.map(id=>postcards.find(p=>p.id===id)?.place||id).join(" · "):"No postcards kept yet. Choose any you like."}
 function kuwaitDay(date){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kuwait",year:"numeric",month:"2-digit",day:"2-digit"}).format(date)}
 function dayNumber(value){const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(value||"");if(!m)return null;const d=Date.UTC(+m[1],+m[2]-1,+m[3]);const actual=new Date(d);if(actual.getUTCFullYear()!==+m[1]||actual.getUTCMonth()!==+m[2]-1||actual.getUTCDate()!==+m[3])return null;return Math.floor(d/86400000)}
-function showSurgery(){const scheduled=dayNumber(config.surgeryDate);const today=dayNumber(kuwaitDay(new Date()));const d=scheduled===null?null:today-scheduled;let phase=null;
+function showSurgery(){const scheduled=dayNumber(config.SURGERY_DATE ?? config.surgeryDate);const today=dayNumber(kuwaitDay(new Date()));const d=scheduled===null?null:today-scheduled;let phase=null;
 if(d!==null){if(d>=-7&&d<0)phase="before";else if(d===0)phase="day";else if(d>=1&&d<=14)phase="recovering"}
 const area=$("#quietSpecial");area.hidden=!phase;if(!phase)return;
 const entries=notes.surgery[phase]||[];$("#specialTitle").textContent={before:"A little note for this week",day:"A quiet note for today",recovering:"For the days after"}[phase];
