@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ordinary",
+    "title": "On an ordinary day",
+    "stamp": "OPEN WHENEVER",
+    "body": [
+      "Nothing happened today. I thought that was a perfectly good reason to leave you a note.",
+      "I hope there was at least one decent snack involved. If not, the day's management should be questioned.",
+      "Anyway. I'm glad you exist. That's all."
+    ]
+  },
+  {
+    "id": "three-years",
+    "title": "The distance thing",
+    "stamp": "NO DRAMA DEPARTMENT",
+    "body": [
+      "Almost three years is quite a long time to go without meeting someone and still have random things to tell them.",
+      "I didn't want to make this place about missing each other. I wanted it to be somewhere you could wander around and laugh a little.",
+      "But yes, occasionally I do miss the nonsense in person."
+    ]
+  },
+  {
+    "id": "doctor",
+    "title": "Dr. Maha, officially",
+    "stamp": "VERY OFFICIAL",
+    "body": [
+      "Dear Doctor, the railway would like to congratulate you on possessing a doctorate and still being allowed to make questionable travel decisions.",
+      "Please note: this certificate entitles you to absolutely no free train tickets.",
+      "Regards, the management."
+    ]
+  },
+  {
+    "id": "vlogger",
+    "title": "For a future filmmaker",
+    "stamp": "NO DEADLINES",
+    "body": [
+      "You talk about seeing places and making travel videos. You don't have to become someone else's idea of a creator to do that.",
+      "Film a window. A street. The way a place sounds. Don't post it unless you want to.",
+      "Episode one can just be something you keep."
+    ]
+  },
+  {
+    "id": "not-great",
+    "title": "For a rubbish day",
+    "stamp": "TAKE YOUR TIME",
+    "body": [
+      "Some days aren't fixable with a clever sentence. I'm not going to pretend otherwise.",
+      "If this is one of those, you can close the website after this. Seriously.",
+      "The chai stall will still be here whenever."
+    ]
+  },
+  {
+    "id": "little",
+    "title": "A small thing",
+    "stamp": "FOR MAHA",
+    "body": [
+      "I used to think gifts had to be something you could wrap.",
+      "This one is a bunch of small things. Some silly, some quiet, some that might remind you of home.",
+      "You don't need to see everything. It's yours."
+    ]
+  },
+  {
+    "id": "future",
+    "title": "For much later",
+    "stamp": "OPEN ANY YEAR",
+    "body": [
+      "If you're reading this years after it was made, I wonder which station you're in.",
+      "Maybe half the jokes are terrible by now. That's honestly a reasonable possibility.",
+      "The part that matters hasn't changed: this place was made for you to use whenever you like."
+    ]
+  }
+]
