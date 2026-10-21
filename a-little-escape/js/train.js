@@ -13,6 +13,8 @@ const reduced=()=>window.matchMedia("(prefers-reduced-motion: reduce)").matches|
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const navi=id=>window.mahaNavigate?.(id);
 function gotoStation(id){
+ const rooms={vlog:"vlogRoom",arcade:"arcadeRoom",post:"postRoom",chai:"chaiRoom",quiet:"quietRoom"};
+ if(rooms[id]){navi(rooms[id]);return}
  const s=stations.find(x=>x.id===id);if(!s)return;
  const panel=$("#station");$("#stationEyebrow").textContent="STOP "+s.number+" / "+s.place;
  $("#stationName").textContent=s.name;$("#stationSubtitle").textContent=s.subtitle;
