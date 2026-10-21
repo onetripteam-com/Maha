@@ -66,6 +66,7 @@ async function start(){
  $("#ticketRide").addEventListener("click",openTrain);
  $("#trainStops").addEventListener("click",e=>{const b=e.target.closest("[data-open-stop]");if(b)gotoStation(b.dataset.openStop)});
  $("#hubDoors").addEventListener("click",e=>{const b=e.target.closest("[data-open-stop]");if(b)gotoStation(b.dataset.openStop)});
+ window.addEventListener("maha:scene",e=>{if(e.detail?.id==="train")requestAnimationFrame(landscape);if(e.detail?.id==="hub")updateKuwait()});
  window.addEventListener("scroll",requestUpdate,{passive:true});window.addEventListener("resize",requestUpdate,{passive:true});
  if(store.get("visited"))hub();
 }
