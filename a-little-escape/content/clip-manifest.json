@@ -1,0 +1,35 @@
+{
+  "note": "Add muted H.264 MP4 clips <=3MB each, 720p, and optional posters/captions. Do not use copyrighted clips without permission.",
+  "clips": [
+    {
+      "id": "hello",
+      "file": "assets/video/hello.mp4",
+      "poster": "assets/posters/hello.jpg",
+      "caption": "assets/video/hello.vtt"
+    },
+    {
+      "id": "camera-roll",
+      "file": "assets/video/camera-roll.mp4",
+      "poster": "assets/posters/camera-roll.jpg",
+      "caption": "assets/video/camera-roll.vtt"
+    },
+    {
+      "id": "train-window",
+      "file": "assets/video/train-window.mp4",
+      "poster": "assets/posters/train-window.jpg",
+      "caption": "assets/video/train-window.vtt"
+    },
+    {
+      "id": "surprise",
+      "file": "assets/video/surprise.mp4",
+      "poster": "assets/posters/surprise.jpg",
+      "caption": "assets/video/surprise.vtt"
+    },
+    {
+      "id": "ordinary-day",
+      "file": "assets/video/ordinary-day.mp4",
+      "poster": "assets/posters/ordinary-day.jpg",
+      "caption": "assets/video/ordinary-day.vtt"
+    }
+  ]
+}
