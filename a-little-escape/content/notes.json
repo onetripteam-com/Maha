@@ -1,0 +1,113 @@
+{
+  "timezone": "Asia/Kuwait",
+  "moods": {
+    "great": [
+      "Okay, who's responsible for this suspiciously good mood?",
+      "A good day deserves a snack with absolutely no justification.",
+      "Go on, take the scenic route. The boring route will survive.",
+      "Today has excellent side-quest potential.",
+      "This is your official permission slip to enjoy the little things.",
+      "Tell me one ridiculous thing that made you laugh today.",
+      "If the day is being nice, don't interrogate it.",
+      "A tiny celebration is still a celebration. Chai counts.",
+      "Look at you, accidentally having a decent day.",
+      "You could film ten seconds of today. No need to post it.",
+      "Somewhere a very serious person is missing all the fun.",
+      "I'd like to nominate this day for a small gold sticker.",
+      "Keep a bit of this feeling in your pocket for later.",
+      "A good playlist and an open window? That's a plan.",
+      "The station staff approve of this mood. Unanimously."
+    ],
+    "okay": [
+      "An ordinary day is allowed to stay ordinary.",
+      "Nothing spectacular? Fine. We have decent biscuits.",
+      "You do not owe today a plot twist.",
+      "Some days are just Tuesday wearing another day's clothes.",
+      "A small walk can count as an adventure. So can staying in.",
+      "How about one tiny thing that feels nice? No homework.",
+      "No headline today. The newspaper can handle that.",
+      "An okay day doesn't need a dramatic review.",
+      "The chai stall is open to people with absolutely no updates.",
+      "You can change your mind halfway through anything here.",
+      "There is no prize for making every hour productive.",
+      "Half-finished plans have a certain charm, don't they?",
+      "If today were a film, this might be the tea-making scene.",
+      "Nothing wrong with quietly minding your own business.",
+      "A regular day can still have a very good snack."
+    ],
+    "tired": [
+      "Today's ambition can be finding the comfortable side of the pillow.",
+      "You may ignore the imaginary station manager. He's not real.",
+      "No grand plans. Maybe water, maybe a stretch, maybe nothing.",
+      "Being tired isn't a character flaw. It's a cue to slow down.",
+      "This train has a window seat with your name on it.",
+      "The to-do list can remain a list for a while.",
+      "If rest had an entrance exam, I'd argue against it.",
+      "Low battery mode is still a valid mode.",
+      "No one is checking whether you used this afternoon efficiently.",
+      "You don't have to be entertaining today. Even for me.",
+      "Let the world be loud somewhere else for a bit.",
+      "A quiet cup of tea is a perfectly good itinerary.",
+      "The next train is whenever you feel like taking it.",
+      "Maybe close a few tabs. The ones in your head too, if possible.",
+      "I have cancelled all unnecessary dramatic announcements."
+    ],
+    "heavy": [
+      "I won't tell you to cheer up. That would be spectacularly unhelpful.",
+      "You can sit here without explaining anything.",
+      "Some days are a lot. That's the whole sentence.",
+      "No pep talk today. Just a place to put your bag down.",
+      "If you need quiet, I'll keep the imaginary station staff quiet.",
+      "You don't have to make sense of everything right now.",
+      "We can leave the difficult bits unnamed for a moment.",
+      "You don't need a reason to choose the quieter carriage.",
+      "The train can stop. Nobody's charging for delays.",
+      "If a joke helps, there are some nearby. If not, skip them.",
+      "Even this website doesn't need your attention today.",
+      "No silver lining required; the window is just a window.",
+      "Take what feels useful here and leave the rest.",
+      "If everything feels noisy, one small calm thing is enough.",
+      "I can offer you tea and an appropriately useless stamp."
+    ],
+    "missing_home": [
+      "Some days you just want food that tastes exactly right.",
+      "There are places that make sense without explaining them.",
+      "Missing home can show up during the most random Tuesday.",
+      "A familiar song can turn a room into somewhere else for a minute.",
+      "I hope you find a little bit of familiar today.",
+      "Should we pretend the train is stopping for banana chips?",
+      "Nobody prepares you for missing a particular street.",
+      "The nice thing about memories: terrible at following borders.",
+      "An old photo can be a tiny doorway, sometimes.",
+      "Maybe a familiar film tonight. No compulsory nostalgia.",
+      "It's okay if two places feel like home in different ways.",
+      "A particular kind of rain can send you miles away.",
+      "I saved a window seat for the long way back, whenever.",
+      "If you miss the noise as much as the people, I get it.",
+      "Home doesn't have to become a motivational quote. You can just miss it."
+    ]
+  },
+  "surgery": {
+    "before": [
+      "Just a small note from me: you don't have to turn this week into a brave speech.",
+      "If distractions would help, the Arcade is taking completely unserious applications.",
+      "I hope you get space to rest between all the practical things.",
+      "No expectations to reply to anybody from this carriage.",
+      "If you'd rather talk about snacks than appointments, absolutely fair."
+    ],
+    "day": [
+      "Thinking of you today, Habibii. No reply needed.",
+      "There's a quiet seat here whenever you want it.",
+      "I hope you're surrounded by care and the things that comfort you.",
+      "If all you want today is a familiar voice, there's a space for one here.",
+      "No speeches. Just a little note saying I'm thinking of you."
+    ],
+    "recovering": [
+      "No need to make recovery into a productivity project.",
+      "Tiny distractions are available; so is doing absolutely nothing.",
+      "If you're bored, we have the world's least important games.",
+      "I hope you get the rest and support you need.",
+      "You never have to report your progress to the imaginary railway staff."
+    ]
+  }
+}
