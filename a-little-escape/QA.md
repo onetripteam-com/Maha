@@ -1,5 +1,12 @@
 # MAHA — A Little Escape: Phase 5 QA
 
+## Integration fixes and regression coverage (October 21, 2026)
+- Fixed repeated/double routing caused by multiple station click handlers.
+- Personal rooms now initialize on actual scene entry, so Chai Stall notes, postcard collection counts and the Quiet Carriage's date-aware layer refresh even when entered directly from train cards.
+- Railway scenery and Kuwait Today board update after view transitions.
+- Added the user-requested uppercase `SURGERY_DATE` config field (null by default), with backward compatibility for the older `surgeryDate` field.
+- Added a dependency-free Node smoke test under `tests/smoke.mjs` and GitHub Actions workflow `.github/workflows/maha-escape-smoke.yml` for repeatable syntax, route, manifest, content and selector checks. A workflow commit does not guarantee the run passed; verify the check status under Actions.
+
 ## Automated/static checks performed
 - Checked JavaScript syntax for app.js, train.js, personal.js, play.js, finish.js and sw.js.
 - Verified that direct `#id` selectors in these modules refer to HTML elements; `#vlogChecklist input` is a descendant selector and is intentionally valid.
