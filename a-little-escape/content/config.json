@@ -5,6 +5,8 @@
   "timezone": "Asia/Kuwait",
   "surgeryDate": null,
   "flowerCount": 7,
-  "phase": 1,
-  "privacy": "No analytics. No tracking. This public repository is not private hosting."
+  "phase": 5,
+  "privacy": "No analytics. No tracking. This public repository is not private hosting.",
+  "SURGERY_DATE": null,
+  "contactEmail": null
 }
