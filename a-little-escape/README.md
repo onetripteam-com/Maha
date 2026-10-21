@@ -1,6 +1,6 @@
 # MAHA — A Little Escape 🌸
 
-**Phase 4 — The Playful Layer** is committed in `a-little-escape/`. This is a separate project from the existing site in the repository root; no root files are overwritten.
+**Phase 5 — Sound, PWA and Accessibility Foundation** is committed in `a-little-escape/`. This is a separate project from the existing site in the repository root; no root files are overwritten.
 
 ## Working features
 
@@ -76,3 +76,20 @@ Implemented in `js/play.js`, `css/play.css` and additional HTML scenes:
 Everything is client-side, with no content uploads, login or analytics. Browser storage is device-local and can be cleared. The clip shelf is an asset placeholder, not completed video production.
 
 **Quality status:** the JavaScript modules have passed syntax parsing. Full browser interaction tests, mobile 60fps benchmarking, device-specific accessibility verification and offline support are outstanding; they belong to Phase 5. Do not interpret a commit as a finished production QA pass.
+
+
+## Phase 5 — Sound, offline and QA (2026-10-21)
+
+- **Audio**: Added an optional, user-activated Web Audio mixer (`js/finish.js`) with filtered environmental texture, train beat, flower/stamp/page cues, remembered sound preference, visibility suspension and a visible mute button. Sound is off until manually activated on every fresh session. This is a lightweight synthesised soundtrack, **not yet the requested collection of authentic CC0/royalty-free recordings**. See `SOUND-CREDITS.md`.
+- **PWA**: Added `manifest.webmanifest`, SVG icon and a site-scoped `sw.js` service worker caching the illustrated UI, modules and editable JSON after successful online loading. Optional audio/video is not eagerly cached. Offline availability is best-effort, not guaranteed until tested on the target device.
+- **Routing QA correction**: All five built-out stations open their interactive rooms from both the train stops and the hub. Last Station still opens its dedicated final screen.
+- **Accessibility additions**: Explicit sound control with pressed state, reduced-motion fallbacks, focusable headings and native controls; earlier keyboard interactions remain. Further human testing for WCAG AA is required.
+- **Delivery guides**: `QA.md`, `DEPLOY.md`, `SOUND-CREDITS.md`. The JavaScript parses successfully and referenced element IDs have been checked, but full device/browser tests have **not** been performed.
+
+## Open
+
+If GitHub Pages publishes the repo's `main` branch from `/(root)`, view: `https://onetripteam-com.github.io/Maha/a-little-escape/`. This URL is **not verified live** by the authoring environment; see `DEPLOY.md`.
+
+## Before handing it to Maha
+
+Personalize the draft letters, flowers and mood notes with real jokes and memories; source and supply video/voice/audio files; audit motion and contrast on target phones; check offline after online priming. No analytics, no accounts, no forced notifications. The repo is public; `noindex` is not private access control.
