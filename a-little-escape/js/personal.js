@@ -17,7 +17,7 @@ function nextNote(mood){const all=notes.moods[mood]||[];if(!all.length)return "T
 if(queue.length===0){const last=read("last-"+mood,null);queue=shuffle(all.map((_,i)=>i));if(queue.length>1&&queue[0]===last){[queue[0],queue[1]]=[queue[1],queue[0]]}}
 const index=queue.shift();remember("queue-"+mood,queue);remember("last-"+mood,index);return all[index]}
 function drawNote(){const p=period();$("#noteTime").textContent=introductions[p];$("#noteText").textContent=nextNote(currentMood);$("#moodSeen").textContent=(15-(read("queue-"+currentMood,[]).length))+" / 15 IN THIS ROUND";$("#notesTitle").textContent=zones[currentMood]||"How's today?";document.querySelectorAll("[data-mood]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mood===currentMood)))}
-function enter(room){window.mahaNavigate?.(room);if(room==="chaiRoom")drawNote();if(room==="quietRoom")showSurgery();if(room==="postRoom")renderSaved()}
+function enter(room){window.mahaNavigate?.(room)}
 function stamp(id){const list=read("stamps",[]);if(!list.includes(id)){remember("stamps",[...list,id]);renderSaved()}}
 function renderLetters(){const grid=$("#lettersGrid");grid.innerHTML=letters.map(l=>'<button type="button" class="paper-letter" data-letter="'+esc(l.id)+'"><span>'+esc(l.stamp)+'</span><strong>'+esc(l.title)+'</strong><small>OPEN LETTER ↗</small></button>').join("")}
 function openLetter(id){const l=letters.find(v=>v.id===id);if(!l)return;$("#openLetter").hidden=false;$("#letterName").textContent=l.title;$("#letterStamp").textContent=l.stamp;const paragraphs=$("#letterBody");paragraphs.replaceChildren(...l.body.map(t=>{const p=document.createElement("p");p.textContent=t;return p}));stamp("letter-"+id);$("#openLetter").scrollIntoView({block:"nearest",behavior:"auto"});$("#letterClose").focus()}
@@ -36,7 +36,7 @@ function exportFuture(){const b=new Blob([$("#futureText").value],{type:"text/pl
 function sendMessage(){const text=$("#letterToMe").value.trim();if(!text){$("#sendStatus").textContent="Write a little something first.";return}
 const email=config.contactEmail;if(email&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){window.location.href="mailto:"+encodeURIComponent(email)+"?subject="+encodeURIComponent("A postcard from Maha")+"&body="+encodeURIComponent(text);$("#sendStatus").textContent="An email draft should open. Nothing was sent automatically."}else{navigator.clipboard?.writeText(text).then(()=>$("#sendStatus").textContent="Copied. Paste it into your message to me.").catch(()=>$("#sendStatus").textContent="Please copy this note to send it; no recipient address is configured.");if(!navigator.clipboard)$("#sendStatus").textContent="Please copy this note to send it; no recipient address is configured."}}
 function initEvents(){
-document.addEventListener("click",e=>{const b=e.target.closest("[data-open-stop]");if(b){const m={post:"postRoom",chai:"chaiRoom",quiet:"quietRoom"};if(m[b.dataset.openStop])enter(m[b.dataset.openStop])}});
+window.addEventListener("maha:scene",e=>{const room=e.detail?.id;if(room==="chaiRoom")drawNote();if(room==="quietRoom")showSurgery();if(room==="postRoom")renderSaved()});
 document.querySelectorAll("[data-room-hub]").forEach(b=>b.addEventListener("click",()=>window.mahaNavigate?.("hub")));
 $("#moods").addEventListener("click",e=>{const b=e.target.closest("[data-mood]");if(!b)return;currentMood=b.dataset.mood;remember("mood",currentMood);drawNote();stamp("mood-"+currentMood)});
 $("#anotherNote").addEventListener("click",drawNote);
