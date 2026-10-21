@@ -1,0 +1,25 @@
+name: MAHA — A Little Escape smoke checks
+
+on:
+  push:
+    paths:
+      - 'a-little-escape/**'
+      - '.github/workflows/maha-escape-smoke.yml'
+  pull_request:
+    paths:
+      - 'a-little-escape/**'
+      - '.github/workflows/maha-escape-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check scripts, content and scene wiring
+        working-directory: a-little-escape
+        run: node --test tests/smoke.mjs
