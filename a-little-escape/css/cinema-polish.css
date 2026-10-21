@@ -1,0 +1,44 @@
+/* Director's polish: layered illustrated travel vignettes. Built as low-cost CSS fallback artwork. */
+:root{--ink-strong:#203f31}
+.train-window{--speed:22s;--haze:#fff4d1;box-shadow:inset 0 0 0 6px #ad926d,inset 0 0 52px #2b4c4835,0 0 0 3px #1e3e30}
+.train-window:before{content:"";position:absolute;z-index:8;inset:0;pointer-events:none;background:linear-gradient(115deg,#ffffff54,transparent 38%,#ffffff12 59%,transparent 74%),radial-gradient(ellipse at 55% 100%,transparent 51%,#142d2425 100%)}
+.train-window .sky{background-image:linear-gradient(#9fc9ca 0%,#e2e7c1 73%,#b4c4a3 73%)}
+.landscape-buildings{position:absolute;inset:auto 6% 28%;height:44%;z-index:3;display:flex;align-items:flex-end;gap:4%;opacity:0;pointer-events:none}
+.landscape-buildings span{background:#506d63;flex:1;height:65%;clip-path:polygon(0 14%,34% 14%,34% 0,54% 0,54% 14%,100% 14%,100% 100%,0 100%);box-shadow:inset 7px 0 #d5cbac36}
+.landscape-buildings span:nth-child(2){height:88%;background:#68776c}.landscape-buildings span:nth-child(3){height:54%;background:#587063}.landscape-buildings span:nth-child(4){height:98%;background:#4c655e}.landscape-buildings span:nth-child(5){height:72%;background:#778274}
+.landscape-trees{position:absolute;inset:auto 0 18%;height:33%;z-index:5;pointer-events:none;opacity:0}
+.landscape-trees span{position:absolute;bottom:0;width:11px;height:72%;background:#35574a;border-radius:6px}
+.landscape-trees span:before,.landscape-trees span:after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:68px;height:55%;background:#477b60;border-radius:80% 80% 58% 58%;bottom:36%}
+.landscape-trees span:after{width:49px;height:50%;bottom:65%;background:#3d6955}
+.landscape-trees span:nth-child(1){left:9%;height:67%}.landscape-trees span:nth-child(2){left:28%;height:42%;transform:scale(.76);transform-origin:bottom}.landscape-trees span:nth-child(3){right:22%;height:60%;transform:scale(.93);transform-origin:bottom}.landscape-trees span:nth-child(4){right:8%;height:78%;transform:scale(1.1);transform-origin:bottom}
+.landscape-boat{position:absolute;left:32%;bottom:17%;z-index:6;width:108px;height:15px;background:#614c42;clip-path:polygon(0 0,100% 0,87% 100%,13% 100%);opacity:0;animation:boatDrift var(--speed) ease-in-out infinite}
+.boat-top{position:absolute;bottom:11px;left:42%;height:42px;width:6px;background:#544e3d}
+.boat-top:before{content:"";position:absolute;left:6px;bottom:6px;border-left:0 solid transparent;border-right:33px solid transparent;border-bottom:33px solid #e7dabb}
+.landscape-wing{position:absolute;z-index:6;bottom:15%;right:-6%;width:65%;height:30%;background:linear-gradient(155deg,#f8f7f0,#b2bdbe);clip-path:polygon(0 24%,93% 2%,100% 2%,98% 55%,50% 74%,14% 90%,0 64%);opacity:0;filter:drop-shadow(4px 9px 7px #44646f48)}
+.landscape-wing:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,#5c7c8133 55%,transparent 58%)}
+.landscape-reflection{position:absolute;inset:0;z-index:7;pointer-events:none;opacity:.3;background:linear-gradient(118deg,transparent 13%,#fff8eb59 19%,transparent 31%,transparent 73%,#fff8eb1e 80%,transparent 85%);transform:translate3d(0,0,0)}
+.window-muntin{position:absolute;left:49.5%;height:100%;top:0;width:9px;z-index:7;background:linear-gradient(90deg,#997e5e,#e7d3ad,#957758);box-shadow:-5px 0 13px #32453927,5px 0 13px #32453927;pointer-events:none}
+.train-window[data-landscape="backwaters"] .landscape-boat,.train-window[data-landscape="backwaters"] .landscape-trees{opacity:1}
+.train-window[data-landscape="raincity"] .landscape-buildings{opacity:.95}
+.train-window[data-landscape="raincity"] .landscape-trees{opacity:.5;filter:saturate(.7)}
+.train-window[data-landscape="goldenhour"] .landscape-buildings{opacity:.85;filter:sepia(.7)}
+.train-window[data-landscape="goldenhour"] .landscape-buildings span{background:#ad7756}
+.train-window[data-landscape="goldenhour"] .sun{background:#ffe0a0;box-shadow:0 0 0 45px #ffe7b234}
+.train-window[data-landscape="mountains"] .landscape-trees{opacity:.75}
+.train-window[data-landscape="rainwindow"] .landscape-trees{opacity:.35;filter:blur(2px)}
+.train-window[data-landscape="clouds"] .landscape-wing{opacity:1}
+.train-window[data-landscape="clouds"] .sun{opacity:.8}
+.train-window[data-landscape="clouds"] .landscape-reflection{opacity:.68}
+.train-window[data-landscape="clouds"] .landscape-trees{opacity:0}
+.train-window[data-landscape="raincity"] .water,.train-window[data-landscape="rainwindow"] .water{filter:saturate(.7)}
+.train-window .rain{z-index:9;mix-blend-mode:screen}
+.train-window .window-caption{z-index:10;backdrop-filter:blur(4px)}
+.train-sticky .carriage{transition:box-shadow .4s ease}.train-sticky .carriage:focus-within{box-shadow:0 25px 0 #bd9b70,0 31px 0 #8b775c,0 43px 44px #56482b42}
+.hub-door{position:relative;overflow:hidden}.hub-door:after{content:"↗";position:absolute;right:18px;top:16px;color:#ae7456;font-family:Georgia,serif;font-size:20px;opacity:.6;transition:transform .2s}.hub-door:hover:after,.hub-door:focus-visible:after{transform:translate(3px,-4px)}
+.stop-card{position:relative;isolation:isolate}.stop-card:before{content:"";position:absolute;inset:8px;border:1px solid #dccbb2;pointer-events:none}
+.stop-card:nth-child(2n) .stop-icon{background:#e4c4ac}.stop-card:nth-child(3n) .stop-icon{background:#d4e1cc}
+.paper-letter{background:linear-gradient(35deg,#f3dfc0,#f6ebd7)}.paper-letter:before{content:"";position:absolute;pointer-events:none}
+@keyframes boatDrift{0%,100%{transform:translateX(-13px) translateY(0)}50%{transform:translateX(30px) translateY(-4px)}}
+@media(max-width:780px){.window-muntin{width:5px}.landscape-trees span:before{width:42px}.landscape-trees span:after{width:29px}.landscape-boat{width:70px}.landscape-buildings{height:39%;inset-inline:2%}.window-caption{font-size:8px!important}.train-window .sun{width:48px}}
+@media(prefers-reduced-motion:reduce){.landscape-boat{animation:none}.train-window .window-caption{backdrop-filter:none}}
+html.manual-reduce .landscape-boat{animation:none}html.manual-reduce .train-window .window-caption{backdrop-filter:none}
