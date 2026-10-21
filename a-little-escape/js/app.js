@@ -2,7 +2,7 @@ const qs=(s)=>document.querySelector(s);
 const STORE="maha-escape-phase1-v1";
 const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)");
 const safe={get(k){try{return JSON.parse(localStorage.getItem(STORE)||"{}")[k]}catch{return undefined}},set(k,v){try{const o=JSON.parse(localStorage.getItem(STORE)||"{}");o[k]=v;localStorage.setItem(STORE,JSON.stringify(o))}catch{}}};
-const sceneIds=["hug","flowers","platform","train","station","hub","chaiRoom","postRoom","quietRoom"];
+const sceneIds=["hug","flowers","platform","train","station","hub","chaiRoom","postRoom","quietRoom","vlogRoom","arcadeRoom"];
 function showScene(id){if(!sceneIds.includes(id))return;const swap=()=>{for(const name of sceneIds)qs("#"+name).hidden=name!==id;window.scrollTo({top:0,behavior:"instant"});safe.set("lastScene",id);const title=qs("#"+id+" h1,#"+id+" h2");if(title){title.setAttribute("tabindex","-1");title.focus({preventScroll:true})}};if(document.startViewTransition&&!prefersReduced.matches&&!document.documentElement.classList.contains("manual-reduce")){try{document.startViewTransition(swap)}catch{swap()}}else swap()}
 window.mahaNavigate=showScene;
 const reducedToggle=qs("#motionToggle");const savedReduce=!!safe.get("reduceMotion");document.documentElement.classList.toggle("manual-reduce",savedReduce);reducedToggle.setAttribute("aria-pressed",String(savedReduce));reducedToggle.addEventListener("click",()=>{const next=!document.documentElement.classList.contains("manual-reduce");document.documentElement.classList.toggle("manual-reduce",next);safe.set("reduceMotion",next);reducedToggle.setAttribute("aria-pressed",String(next));reducedToggle.textContent=next?"Full motion":"Reduce motion"});
