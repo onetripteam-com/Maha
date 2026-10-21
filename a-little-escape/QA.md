@@ -43,3 +43,9 @@
 - Date-aware surgery layer deliberately defaults off; it is not medical advice and never promises outcomes.
 - Word list uses a small Manglish bank. Have a native speaker review alternative transliterations and clue quality before gifting.
 - Station cards and sections use static illustration in place of video; the main train has no GSAP/Lenis dependency at present. This avoids mobile library overhead, but visual QA is still necessary.
+
+## Visual refinement pass (21 October 2026)
+- Added CSS-painted boat, skyline, trees, plane wing, glass reflection and window muntin across the existing landscape states. No optional video is required for these visuals.
+- Fixed stylesheet import precedence: the Google Fonts @import now sits before other CSS rules, with browser fallback fonts retained.
+- Extended the offline shell cache to include `css/cinema-polish.css`; version bumped to invalidate old cached styles.
+- These changes are source-level visual refinement, not verified Awwwards-level quality or measured phone performance. Check actual screenshots at 360px and 1440px before gifting.
