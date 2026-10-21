@@ -1,0 +1,18 @@
+{
+  "name": "MAHA — A Little Escape",
+  "short_name": "Maha Express",
+  "description": "A tiny place for Maha, open on ordinary days.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4eddf",
+  "theme_color": "#244b3c",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
