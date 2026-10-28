@@ -14,6 +14,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./refinement.css">
+  <link rel="stylesheet" href="./room-world.css">
   <title>Maha's Little Elsewhere 🌸</title>
 </head>
 <body>
@@ -27,101 +28,137 @@
     </div>
   </header>
   <main id="main">
-    <section id="scene-home" class="scene scene-home" data-scene="home" aria-labelledby="home-title">
-      <div class="home-layout">
-        <div class="home-copy">
-          <p class="eyebrow"><span class="mini-sun">✳</span> A TINY TOWN · EXCLUSIVELY FOR YOUR RANDOM DAYS</p>
-          <h1 id="home-title">Come in, <i>Maha.</i></h1>
-          <p class="lead">Your little elsewhere is open.</p>
-          <p>A flower shop, a tiny cinema, letters, and a few things that make absolutely no sense. Pick a door.</p>
-          <div class="home-cta"><button class="primary-btn" data-go="garden">Visit the flowers <span aria-hidden="true">↗</span></button><span class="scribble-note">No tickets. No rush.<svg viewBox="0 0 80 28" aria-hidden="true"><path d="M2 4 Q32 27 72 10 l-12 -3 M72 10 l-6 11"/></svg></span></div>
-        </div>
-        <div class="map-stage">
-          <div class="map-frame" aria-label="Interactive town map"><div class="map-depth map-depth-back" aria-hidden="true"></div><img class="town-art" src="./assets/little-town.svg" alt="An illustrated miniature town with a flower shop, cinema, post office, hills, tiny roads and a travel station" width="1400" height="840">
-            <button class="town-hotspot hotspot-garden" data-go="garden" aria-label="Visit the flower shop"><span>Flowers</span></button>
-            <button class="town-hotspot hotspot-mail" data-go="mail" aria-label="Visit the post office"><span>Post office</span></button>
-            <button class="town-hotspot hotspot-cinema" data-go="cinema" aria-label="Visit the picture house"><span>Cinema</span></button>
-            <button class="town-hotspot hotspot-travel" data-go="travel" aria-label="Visit the travel station"><span>Travel</span></button>
-            <button class="town-hotspot hotspot-arcade" data-go="arcade" aria-label="Visit the arcade"><span>Arcade</span></button>
+    <section id="scene-home" class="scene scene-home world-home" data-scene="home" data-room-theme="monsoon" aria-labelledby="home-title">
+      <div class="room-collection">
+        <div class="room-hero-heading">
+          <div>
+            <p class="room-kicker"><span class="room-sparkle" aria-hidden="true">✳</span> SIX LITTLE HOMES · ONE VERY GOOD REASON TO COME BACK</p>
+            <h1 id="home-title" class="room-hero-title">Come in, <em>Maha.</em></h1>
           </div>
-          <p class="map-caption"><span class="map-caption-star" aria-hidden="true">✳</span> Tap a building to go in · Or choose a little detour below.</p>
+          <div class="room-hero-copy">
+            <p>Somewhere to disappear into for a little while. Every object has somewhere to take you.</p>
+            <span class="room-note-small">Your room. Your pace. No occasion needed.</span>
+          </div>
+        </div>
+
+        <div class="room-shell" id="room-shell" data-room-theme="monsoon">
+          <div class="room-shell-head">
+            <div class="room-label"><span class="room-door" aria-hidden="true">⌂</span><span class="room-label-text"><strong id="room-name">The Monsoon House</strong><small>ONE ROOM · MANY LITTLE ESCAPES</small></span></div>
+            <div class="room-discover"><span aria-hidden="true"></span> Everything here opens</div>
+          </div>
+          <div class="room-scene" id="room-scene">
+            <div class="room-art" id="room-art" role="img" aria-label="An illustrated welcoming living room with flowers, a television, suitcase, letters, games and a reading lamp."></div>
+            <button type="button" class="room-object" data-object="garden" data-go="garden" aria-label="Pick flowers from the vase"><span class="room-object-dot" aria-hidden="true">✿</span><span class="room-object-text">Flowers</span></button>
+            <button type="button" class="room-object" data-object="cinema" data-go="cinema" aria-label="Watch a film through the room screen"><span class="room-object-dot" aria-hidden="true">▣</span><span class="room-object-text">Cinema</span></button>
+            <button type="button" class="room-object" data-object="mail" data-go="mail" aria-label="Open the letters"><span class="room-object-dot" aria-hidden="true">✉</span><span class="room-object-text">Letters</span></button>
+            <button type="button" class="room-object" data-object="travel" data-go="travel" aria-label="Open the travel suitcase"><span class="room-object-dot" aria-hidden="true">✧</span><span class="room-object-text">Travel</span></button>
+            <button type="button" class="room-object" data-object="arcade" data-go="arcade" aria-label="Play games on the console"><span class="room-object-dot" aria-hidden="true">✦</span><span class="room-object-text">Games</span></button>
+            <button type="button" class="room-object" data-object="weather" data-go="weather" aria-label="Visit the mood window through the lamp"><span class="room-object-dot" aria-hidden="true">☼</span><span class="room-object-text">Moods</span></button>
+            <button type="button" class="room-object" data-object="curiosities" data-go="curiosities" aria-label="Open the secret drawers"><span class="room-object-dot" aria-hidden="true">⌁</span><span class="room-object-text">Secrets</span></button>
+          </div>
+          <div class="room-objects-mobile" aria-label="Explore the room's objects">
+            <button class="room-mobile-door" type="button" data-go="garden"><span class="door-symbol" aria-hidden="true">✿</span><span><strong>Flowers</strong><small>Make a bouquet</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="mail"><span class="door-symbol" aria-hidden="true">✉</span><span><strong>Letters</strong><small>A little postbox</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="cinema"><span class="door-symbol" aria-hidden="true">▣</span><span><strong>Cinema</strong><small>A tiny film</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="travel"><span class="door-symbol" aria-hidden="true">✧</span><span><strong>Suitcase</strong><small>Dream a detour</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="arcade"><span class="door-symbol" aria-hidden="true">✦</span><span><strong>Arcade</strong><small>Play for a bit</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="weather"><span class="door-symbol" aria-hidden="true">☼</span><span><strong>Mood lamp</strong><small>For any kind of day</small></span></button>
+            <button class="room-mobile-door" type="button" data-go="curiosities"><span class="door-symbol" aria-hidden="true">⌁</span><span><strong>Secret drawers</strong><small>A small surprise awaits</small></span></button>
+          </div>
+          <div class="room-shell-foot"><p id="room-note" aria-live="polite">The kettle is on. The rain can wait.</p><span>✳ TAP THE OBJECTS TO EXPLORE</span></div>
         </div>
       </div>
+
+      <div class="room-room-picker">
+        <div class="room-picker-head">
+          <div><p>EVERY HOME HAS A DIFFERENT STORY</p><h2>Which home feels like <em>today?</em></h2></div>
+          <p class="picker-hint">Choose one. Come back and switch anytime.</p>
+        </div>
+        <div class="room-theme-picker" id="room-theme-picker" role="group" aria-label="Choose which home to visit">
+          <button type="button" class="room-theme selected" data-room="monsoon" aria-pressed="true"><span class="theme-mini" aria-hidden="true"></span><strong>Monsoon House</strong><small>Kerala · rain and teak</small></button>
+          <button type="button" class="room-theme" data-room="dusk" aria-pressed="false"><span class="theme-mini" aria-hidden="true"></span><strong>Dusk Apartment</strong><small>Kuwait · golden hour</small></button>
+          <button type="button" class="room-theme" data-room="sunday" aria-pressed="false"><span class="theme-mini" aria-hidden="true"></span><strong>Sunday Studio</strong><small>Colourful · creative</small></button>
+          <button type="button" class="room-theme" data-room="coast" aria-pressed="false"><span class="theme-mini" aria-hidden="true"></span><strong>Blue House</strong><small>By the sea · airy</small></button>
+          <button type="button" class="room-theme" data-room="library" aria-pressed="false"><span class="theme-mini" aria-hidden="true"></span><strong>Midnight Library</strong><small>Books · quiet nights</small></button>
+          <button type="button" class="room-theme" data-room="cabin" aria-pressed="false"><span class="theme-mini" aria-hidden="true"></span><strong>Mountain Cabin</strong><small>Snow · firelight</small></button>
+        </div>
+      </div>
+
       <div class="home-bottom">
-        <div class="home-next-head"><div><p class="section-eyebrow">OR TAKE A LITTLE DETOUR</p><h2>What sounds good <i>right now?</i></h2></div><button class="outline-btn" id="surprise-me" type="button">Surprise me ↗</button></div>
+        <div class="home-next-head"><div><p class="section-eyebrow">OR DON'T PICK A ROOM OBJECT</p><h2>Take a little <i>detour.</i></h2></div><button class="outline-btn" id="surprise-me" type="button">Surprise me ↗</button></div>
         <div class="district-grid" id="district-grid">
-          <button data-go="weather" class="district district-blue"><span class="district-symbol">☼</span><b>For whatever kind of day</b><small>A little window for the mood you're in</small><span class="district-arrow">↗</span></button>
-          <button data-go="cinema" class="district district-lilac"><span class="district-symbol">▣</span><b>Watch a tiny film</b><small>Find a seat in the picture house</small><span class="district-arrow">↗</span></button>
-          <button data-go="travel" class="district district-orange"><span class="district-symbol">✧</span><b>Dream up a detour</b><small>Try the very unofficial travel studio</small><span class="district-arrow">↗</span></button>
-          <button data-go="arcade" class="district district-yellow"><span class="district-symbol">✦</span><b>A bit of nonsense</b><small>Three games. No serious consequences.</small><span class="district-arrow">↗</span></button>
+          <button data-go="weather" class="district district-blue"><span class="district-symbol">☼</span><b>Whatever kind of day</b><small>Something for the mood you're in</small><span class="district-arrow">↗</span></button>
+          <button data-go="cinema" class="district district-lilac"><span class="district-symbol">▣</span><b>A little movie night</b><small>Your own tiny picture house</small><span class="district-arrow">↗</span></button>
+          <button data-go="travel" class="district district-orange"><span class="district-symbol">✧</span><b>Pack a daydream</b><small>Make an imaginary travel film</small><span class="district-arrow">↗</span></button>
+          <button data-go="arcade" class="district district-yellow"><span class="district-symbol">✦</span><b>Some nonsense</b><small>Three actual games, zero pressure</small><span class="district-arrow">↗</span></button>
         </div>
       </div>
-      <p class="home-footerline">Made to be visited on an ordinary Tuesday, a brilliant Friday, or a very strange Wednesday. <span>❀</span></p>
+      <p class="home-footerline">Built to feel like a place, not a page. Yours for ordinary Tuesdays and extraordinary Fridays. <span>❀</span></p>
     </section>
 
     <section id="scene-garden" class="scene scene-garden" data-scene="garden" aria-labelledby="garden-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 01 · FLOWER LANE</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 01 · FLOWER LANE</span></div>
       <div class="scene-heading"><div><p class="eyebrow">WELCOME TO THE FLOWER SHOP</p><h2 id="garden-title">A bouquet, <i>just because.</i></h2><p>Pick the flowers. Mix whatever colours you fancy. There are no wrong arrangements and absolutely no florist judging you.</p></div><span class="heading-ornament" aria-hidden="true">✿</span></div>
       <div class="garden-layout">
         <div class="bouquet-workspace"><div class="bouquet-topnote">MAHA'S LITTLE FLOWER SHOP <span>✴</span> FLOWERS DON'T NEED AN OCCASION</div><div id="bouquet-stage" class="bouquet-stage" aria-label="Your bouquet arrangement"></div><p id="bouquet-message" class="bouquet-message" aria-live="polite">This bunch is waiting for a little colour.</p><div class="bouquet-buttons"><button id="bouquet-undo" class="outline-btn" disabled>↶ Undo</button><button id="bouquet-save" class="primary-btn">Keep this bouquet</button><button id="bouquet-reset" class="text-button">Start over</button></div></div>
         <div class="flower-counter"><p class="counter-title">PICK YOUR STEMS <span id="stem-count">0 / 7</span></p><div id="flower-options" class="flower-options"></div><div class="counter-drawer"><span class="counter-drawer-icon">✎</span><div><b>A note from the florist</b><p>Some flowers are for big days. These are for whichever day it happens to be.</p></div></div><div class="counter-drawer"><span class="counter-drawer-icon">❀</span><div><b>A tiny secret</b><p>Try adding different kinds of flowers. Each one has its own little meaning.</p></div></div></div>
       </div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="mail">Read a letter →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="mail">Read a letter →</button></div></aside>
     </section>
 
     <section id="scene-weather" class="scene scene-weather" data-scene="weather" aria-labelledby="weather-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 02 · WHATEVER THE WEATHER</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 02 · WHATEVER THE WEATHER</span></div>
       <div class="scene-heading"><div><p class="eyebrow">A WINDOW THAT DOESN'T ASK TOO MANY QUESTIONS</p><h2 id="weather-title">What's the weather <i>in your head?</i></h2><p>Not the Kuwait forecast. The other kind. Choose whatever feels closest today; you can change your mind in two seconds.</p></div><span class="heading-ornament" aria-hidden="true">☼</span></div>
       <div class="weather-choices" id="weather-choices"></div>
       <div class="weather-experience" id="weather-experience"><div class="weather-empty"><span>☼</span><h3>Any kind of day is welcome here.</h3><p>Tap a little weather report above to open your window.</p></div></div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="garden">Pick some flowers →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="garden">Pick some flowers →</button></div></aside>
     </section>
 
     <section id="scene-mail" class="scene scene-mail" data-scene="mail" aria-labelledby="mail-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 03 · POST OFFICE</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 03 · POST OFFICE</span></div>
       <div class="scene-heading"><div><p class="eyebrow">DELIVERIES TO: MAHA, ANYWHERE</p><h2 id="mail-title">The post office <i>at the end of the road.</i></h2><p>It's small, it's rather dramatic about stamps, and it has a few things addressed to you.</p></div><span class="heading-ornament" aria-hidden="true">✉</span></div>
       <div class="segmented" role="tablist" aria-label="Post office collections"><button id="tab-postcards" class="segment active" role="tab" aria-controls="postcards-panel" aria-selected="true" data-mail-tab="postcards">Postcards <span>↗</span></button><button id="tab-letters" class="segment" role="tab" aria-controls="letters-panel" aria-selected="false" data-mail-tab="letters">Little letters <span>✎</span></button></div>
       <div id="postcards-panel" role="tabpanel" aria-labelledby="tab-postcards"><div class="mail-intro"><p>Each card has something scribbled on the back. Tap to flip; swipe across to explore on a phone.</p><span>POSTMARKS: <b id="postcard-count">0</b></span></div><div id="postcards-grid" class="postcards-grid"></div></div>
       <div id="letters-panel" role="tabpanel" aria-labelledby="tab-letters" hidden><div class="mail-intro"><p>A few letters with wildly different levels of seriousness. Pick any envelope.</p><span>FOR YOUR EYES, MOSTLY.</span></div><div id="letters-grid" class="letters-grid"></div></div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="cinema">See the picture show →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="cinema">See the picture show →</button></div></aside>
     </section>
 
     <section id="scene-cinema" class="scene scene-cinema" data-scene="cinema" aria-labelledby="cinema-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 04 · PICTURE HOUSE</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 04 · PICTURE HOUSE</span></div>
       <div class="scene-heading cinema-heading"><div><p class="eyebrow">ONE TICKET, UNLIMITED REWATCHES</p><h2 id="cinema-title">The smallest cinema <i>in the world.</i></h2><p>Original production. Extremely tiny budget. Quite a lot of heart. Find a seat.</p></div><span class="heading-ornament" aria-hidden="true">✷</span></div>
       <div class="cinema-room"><div class="cinema-marquee"><span>✦</span> THE ELSEWHERE PICTURE HOUSE <span>✦</span></div><div class="movie-shell"><div class="movie-curtain curtain-left" aria-hidden="true"></div><div class="movie-curtain curtain-right" aria-hidden="true"></div><div id="film-screen" class="film-screen" aria-label="Animated story scenes"><div id="film-art" class="film-art"></div><div class="film-copy"><p id="film-caption">The Girl Who Collected Firsts</p></div><div class="film-grain" aria-hidden="true"></div></div></div><div class="cinema-controls"><button id="film-play" class="primary-btn">▶ Start the little film</button><button id="film-next" class="outline-btn" disabled>Next scene →</button><button id="film-replay" class="text-button">↶ From the beginning</button></div><div class="film-meta"><span id="film-counter">SCENE 00 / 05</span><div class="film-progress"><span id="film-progress"></span></div><span>THE GIRL WHO COLLECTED FIRSTS</span></div></div>
       <p class="cinema-footnote">This film contains no real travel footage, no deadlines, and one highly suspicious cloud café.</p>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="travel">Make a tiny film →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="travel">Make a tiny film →</button></div></aside>
     </section>
 
     <section id="scene-travel" class="scene scene-travel" data-scene="travel" aria-labelledby="travel-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 05 · DEPARTURE LOUNGE</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 05 · DEPARTURE LOUNGE</span></div>
       <div class="scene-heading"><div><p class="eyebrow">NO BOARDING PASS REQUIRED</p><h2 id="travel-title">The almost-there <i>travel studio.</i></h2><p>Make a tiny travel film from three imaginary shots. No camera. No pressure to post. Just for the fun of thinking, “What if?”</p></div><span class="heading-ornament" aria-hidden="true">✧</span></div>
       <div class="travel-layout"><div class="studio-film"><div class="studio-header"><span>MAHA'S MOVING PICTURES</span><span>REC ● IMAGINATION</span></div><div id="studio-preview" class="studio-preview"><div class="studio-placeholder"><span>◉</span><h3>Your next little adventure.</h3><p>Choose three shots and press play.</p></div></div><div id="studio-progress" class="studio-progress" aria-live="polite">SHOT 0 / 3</div></div><div class="studio-editor"><h3>DIRECTOR'S DESK <span>✎</span></h3><p>Choose three scenes for your very short film.</p><div id="studio-shots" class="studio-shots"></div><div id="studio-slots" class="studio-slots" aria-label="Selected shots"></div><div class="studio-buttons"><button id="studio-play" class="primary-btn" disabled>▶ Premiere my film</button><button id="studio-clear" class="outline-btn">Clear reel</button></div><p class="handwritten-aside">Director's note: Not every adventure needs a vlog. Some are best kept for yourself.</p></div></div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="arcade">Play for a bit →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="arcade">Play for a bit →</button></div></aside>
     </section>
 
     <section id="scene-arcade" class="scene scene-arcade" data-scene="arcade" aria-labelledby="arcade-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 06 · LITTLE ARCADE</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 06 · LITTLE ARCADE</span></div>
       <div class="scene-heading"><div><p class="eyebrow">HIGHLY IMPORTANT RECREATIONAL NONSENSE</p><h2 id="arcade-title">A little bit of <i>play.</i></h2><p>Three actual games, zero life lessons. Pick your current level of competitive spirit.</p></div><span class="heading-ornament" aria-hidden="true">★</span></div>
       <div class="game-picker" role="tablist" aria-label="Choose a mini game"><button class="game-tab active" data-game-tab="catch" role="tab" aria-controls="game-catch" aria-selected="true">✿ Flower Dash</button><button class="game-tab" data-game-tab="memory" role="tab" aria-controls="game-memory" aria-selected="false">✉ Postcard Pairs</button><button class="game-tab" data-game-tab="suitcase" role="tab" aria-controls="game-suitcase" aria-selected="false">✧ Pack & Go</button></div>
       <div id="game-catch" class="game-panel" role="tabpanel"><div class="game-titleline"><div><h3>Flower Dash <span>✿</span></h3><p>Catch the blossoms, dodge the storm clouds. Move the basket with a finger, mouse or ← → keys.</p></div><div class="score-card">FLOWERS <b id="catch-score">0</b></div></div><div class="canvas-frame"><canvas id="catch-canvas" width="720" height="340" aria-label="Flower-catching game, use left and right arrow keys or move a pointer to position the basket"></canvas><div id="catch-overlay" class="catch-overlay"><p id="catch-overlay-text">Ready, florist?</p><button id="catch-start" class="primary-btn">▶ Start catching</button></div></div><div class="catch-details"><span id="catch-status" aria-live="polite">Catch 12 flowers to earn the florist's medal.</span><span id="catch-lives">☁ MISSES: 0 / 5</span><button id="catch-reset" class="text-button">↶ Restart</button></div></div>
       <div id="game-memory" class="game-panel" role="tabpanel" hidden><div class="game-titleline"><div><h3>Postcard Pairs <span>✉</span></h3><p>Find six matching pairs. The postmaster insists this qualifies as work.</p></div><div class="score-card">MOVES <b id="memory-moves">0</b></div></div><div id="memory-board" class="memory-board" aria-label="Postcard matching board"></div><div class="game-bottom"><p id="memory-status" aria-live="polite">Turn over two cards to find a match.</p><button id="memory-restart" class="outline-btn">↶ Shuffle again</button></div></div>
       <div id="game-suitcase" class="game-panel" role="tabpanel" hidden><div class="game-titleline"><div><h3>Pack & Go <span>✧</span></h3><p>An unexpected trip! Choose the three things you'll actually need.</p></div><div class="score-card">PACKED <b id="pack-score">0 / 3</b></div></div><div class="packing-board"><div id="pack-destination" class="pack-destination"></div><div id="pack-items" class="pack-items"></div><div class="pack-bottom"><p id="pack-message" aria-live="polite"></p><button id="pack-check" class="primary-btn">Check suitcase</button><button id="pack-next" class="outline-btn">New destination ↗</button></div></div></div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="curiosities">Find a secret →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="curiosities">Find a secret →</button></div></aside>
     </section>
 
     <section id="scene-curiosities" class="scene scene-curiosities" data-scene="curiosities" aria-labelledby="curiosities-title" hidden>
-      <div class="section-top"><button class="back-link" data-go="home">← Town square</button><span class="location-tag">NO. 07 · THE ODDITIES SHOP</span></div>
+      <div class="section-top"><button class="back-link" data-go="home">← Back to the room</button><span class="location-tag">NO. 07 · THE ODDITIES SHOP</span></div>
       <div class="scene-heading"><div><p class="eyebrow">SLIGHTLY USELESS THINGS. LOVELY THINGS.</p><h2 id="curiosities-title">A cabinet of <i>curious things.</i></h2><p>Open a drawer, take the unlabelled door, collect a few stamps. You were always allowed to be nosy here.</p></div><span class="heading-ornament" aria-hidden="true">⌁</span></div>
       <div class="oddities-layout"><div class="cabinet"><div class="cabinet-header"><h3>LOST & FOUND DEPARTMENT</h3><p>Tap a drawer. Somebody has been misplacing some very strange objects.</p></div><div id="cabinet-drawers" class="cabinet-drawers"></div><div id="cabinet-message" class="cabinet-message" aria-live="polite">The drawers are waiting. One of them definitely squeaks.</div></div><div class="secrets-column"><div class="secret-door-card"><p>DEFINITELY NOT A SECRET</p><button id="secret-door" class="secret-door" aria-label="Open the unlabelled door"><span class="door-number">?</span><span class="door-knob"></span></button><h3>The unlabelled door.</h3><p id="secret-message">Nobody knows what lives behind it. It changes its mind occasionally.</p><button id="secret-open" class="outline-btn">Open the door ↗</button></div><div class="capsule-card"><span class="capsule-star" aria-hidden="true">✳</span><h3>A note to future Maha</h3><p>Write a tiny note and keep it here. It stays on this device, in this browser. No sending, no accounts.</p><label for="capsule-input">ONE THING YOU'D LIKE TO REMEMBER</label><textarea id="capsule-input" rows="3" maxlength="400" placeholder="Dear future me, ..."></textarea><div class="capsule-actions"><button id="capsule-save" class="primary-btn">Seal the note ✉</button><button id="capsule-open" class="outline-btn">Read saved note</button><button id="capsule-delete" class="text-button">Erase saved note</button></div><p id="capsule-feedback" aria-live="polite"></p></div></div></div>
       <div class="museum"><div class="museum-header"><div><p class="eyebrow">THE POCKET MUSEUM</p><h3>Proof of pleasant detours.</h3></div><span><b id="stamp-count">0</b> / <b id="stamp-total">0</b> collected</span></div><p>Not achievements in any serious sense. Just little souvenirs from the places you've visited. Saved here for next time.</p><div id="stamp-grid" class="stamp-grid"></div><button id="progress-reset" class="text-button reset-progress">Clear collected stamps & progress</button></div>
-      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Town map ↗</button><button type="button" class="primary-btn" data-go="garden">Back to the flowers →</button></div></aside>
+      <aside class="scene-next" aria-label="Another little detour"><span class="scene-next-squiggle" aria-hidden="true">✳</span><div><p>NO NEED TO SEE EVERYTHING AT ONCE</p><h3>Fancy another little detour?</h3></div><div class="scene-next-actions"><button type="button" class="outline-btn" data-go="home">Back to room ↗</button><button type="button" class="primary-btn" data-go="garden">Back to the flowers →</button></div></aside>
     </section>
   </main>
-  <footer class="site-footer"><span>✿ MAHA'S LITTLE ELSEWHERE</span><span>NO EXPIRY DATE · NO RETURN TICKET NEEDED</span><button data-go="home">Back to the town ↑</button></footer>
+  <footer class="site-footer"><span>✿ MAHA'S LITTLE ELSEWHERE</span><span>NO EXPIRY DATE · NO RETURN TICKET NEEDED</span><button data-go="home">Back to the room ↑</button></footer>
   <nav class="dock" aria-label="Main navigation"><div class="dock-inner">
-    <button class="dock-item active" data-go="home" aria-current="page"><span aria-hidden="true">⌂</span><small>Town</small></button>
+    <button class="dock-item active" data-go="home" aria-current="page"><span aria-hidden="true">⌂</span><small>Room</small></button>
     <button class="dock-item" data-go="weather"><span aria-hidden="true">☼</span><small>Moods</small></button>
     <button class="dock-item" data-go="garden"><span aria-hidden="true">✿</span><small>Flowers</small></button>
     <button class="dock-item" data-go="mail"><span aria-hidden="true">✉</span><small>Mail</small></button>
@@ -129,8 +166,8 @@
   </div></nav>
   <dialog id="explore-sheet" class="explore-sheet" aria-labelledby="explore-title">
     <div class="sheet-handle" aria-hidden="true"></div>
-    <div class="sheet-head"><div><p class="eyebrow">YOUR POCKET MAP</p><h2 id="explore-title">Where to, <i>Maha?</i></h2></div><button class="sheet-close" id="explore-close" type="button" aria-label="Close destination menu">×</button></div>
-    <p class="sheet-help">Every door is open. Go wherever feels nice.</p>
+    <div class="sheet-head"><div><p class="eyebrow">YOUR ROOM, YOUR WORLD</p><h2 id="explore-title">Where to, <i>Maha?</i></h2></div><button class="sheet-close" id="explore-close" type="button" aria-label="Close destination menu">×</button></div>
+    <p class="sheet-help">Every object is a door. Go wherever feels nice.</p>
     <div class="sheet-grid">
       <button type="button" data-go="garden"><span>✿</span><b>Flower shop</b><small>Make a bouquet</small></button>
       <button type="button" data-go="weather"><span>☼</span><b>Weather window</b><small>For any kind of day</small></button>
@@ -144,7 +181,7 @@
   <dialog id="letter-dialog" class="letter-dialog" aria-labelledby="letter-dialog-title"><button class="dialog-close" id="letter-close" aria-label="Close letter">×</button><div class="letter-paper"><p class="letter-kicker" id="letter-kicker">A LITTLE LETTER</p><h3 id="letter-dialog-title"></h3><div id="letter-body" class="letter-body"></div><p class="letter-signoff">— From a friend who's very glad you're around. <span>✿</span></p></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
-  <div id="entrance" class="entrance" hidden><div class="entrance-sky"><span>✧</span><span>✳</span><span>✧</span></div><div class="entry-card"><p class="eyebrow">A VERY SMALL PLACE · OPEN WHENEVER</p><div class="entry-envelope" aria-hidden="true"><div class="entry-envelope-back"></div><div class="entry-flap"></div><div class="entry-letter">FOR MAHA <span>✿</span></div><div class="entry-front"></div></div><h2>You've got a little <em>elsewhere.</em></h2><p>One tiny town. Several questionable adventures. Everything at your own pace.</p><button id="enter-world" class="primary-btn">Open your little world ↗</button><span class="entry-footnote">No occasions required.</span></div></div>
+  <div id="entrance" class="entrance" hidden><div class="entrance-sky"><span>✧</span><span>✳</span><span>✧</span></div><div class="entry-card"><p class="eyebrow">A VERY SMALL PLACE · OPEN WHENEVER</p><div class="entry-envelope" aria-hidden="true"><div class="entry-envelope-back"></div><div class="entry-flap"></div><div class="entry-letter">FOR MAHA <span>✿</span></div><div class="entry-front"></div></div><h2>You've got a little <em>elsewhere.</em></h2><p>One cosy room, six different homes, and plenty of questionable adventures. Everything at your own pace.</p><button id="enter-world" class="primary-btn">Open your little world ↗</button><span class="entry-footnote">No occasions required.</span></div></div>
   <script src="./js/content.js" defer></script>
   <script src="./js/audio.js" defer></script>
   <script src="./js/postcard-art.js" defer></script>
@@ -152,5 +189,6 @@
   <script src="./js/games.js" defer></script>
   <script src="./js/motion.js" defer></script>
   <script src="./js/app.js" defer></script>
+  <script src="./js/room-world.js" defer></script>
 </body>
 </html>
