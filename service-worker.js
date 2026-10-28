@@ -1,6 +1,6 @@
 /* Optional offline access after first successful load; no network or analytics beyond the site's own files. */
-const CACHE='little-elsewhere-directors-cut-v6';
-const ASSETS=['./','./index.html','./styles.css','./refinement.css','./js/content.js','./js/app.js','./js/motion.js','./js/audio.js','./js/postcard-art.js','./js/cinema.js','./js/games.js','./assets/favicon.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/apple-touch-icon.png','./assets/little-town.svg','./manifest.webmanifest'];
+const CACHE='little-elsewhere-six-homes-v7';
+const ASSETS=['./','./index.html','./styles.css','./refinement.css','./room-world.css','./js/room-world.js','./js/content.js','./js/app.js','./js/motion.js','./js/audio.js','./js/postcard-art.js','./js/cinema.js','./js/games.js','./assets/favicon.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/apple-touch-icon.png','./assets/little-town.svg','./manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;event.respondWith(fetch(req).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(req,copy));}return response;}).catch(()=>caches.match(req).then(cached=>cached||caches.match('./index.html'))));});
